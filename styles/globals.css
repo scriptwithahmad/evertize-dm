@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #eee;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+}
+
+.glbalBtn {
+  border: 1px solid orangered;
+  padding: 4px 18px;
+}
+
+/* cta imported buton -------------- */
+
+.btn {
+  position: relative;
+  text-decoration: none;
+  padding: 8px 24px;
+  display: inline-block;
+  border-radius: 6em;
+  transition: all 0.2s;
+  border: none;
+  color: #ffffff;
+  background-color: #e77918;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn::after {
+  background-color: #e77918;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+/* Media queries of HERO SECTION  ----------------------------- */
+@media screen and (max-width: 1024px) {
+  .heroMain {
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 0 4%;
+
+    & h1{
+      padding: 20px 0;
+      font-size: 40px;
+      max-width: 100%;
+    }
+    & p{
+      max-width: 70%;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .heroMain {
+    padding: 0 6%;
+
+    & p{
+      max-width: 80%;
+    }
+  }
+}
+@media screen and (max-width: 425px) {
+  .heroMain {
+    gap: 30px;
+
+  & h1{
+    font-size: 26px;
+  }
+  & p{
+    font-size: 14px;
+  }
+  .btn{
+    padding: 4px 10px;
+  }
+  
+  }
+}
+/* Media queries of HERO SECTION  ----------------------------- */
