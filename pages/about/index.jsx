@@ -1,5 +1,6 @@
 import React from "react";
 import Topbar from "@/components/Topbar";
+import AwesomeWork from "@/components/AwesomeWork";
 
 const About = () => {
   return (
@@ -53,6 +54,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <AwesomeWork />
     </>
   );
 };

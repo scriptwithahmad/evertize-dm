@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
+/* body {
   background-color: #eee;
-}
+} */
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +19,6 @@ body {
 }
 
 /* cta imported buton -------------- */
-
 .btn {
   position: relative;
   text-decoration: none;

@@ -20,7 +20,7 @@ const destination = [
 
   {
     name: "Services",
-    link: "/services"
+    link: "/services",
   },
 
   {
@@ -30,15 +30,13 @@ const destination = [
 
   {
     name: "Testimonials",
-    link: "/testimonials"
+    link: "/testimonials",
   },
 
   {
     name: "Contact",
     link: "/contact",
   },
-
-  
 ];
 
 const Navbar = () => {
@@ -69,7 +67,10 @@ const Navbar = () => {
             {destination?.map((v, i) => (
               <li>
                 <Link
-                  className={Router.pathname === v.link ? "acive" : ""}
+                  className={Router.pathname === v.link ? "active" : ""}
+                  style={{
+                    color: Router.pathname === v.link ? "#FA7909" : "#444", // Apply styles conditionally
+                  }}
                   href={v.link}
                 >
                   {v.name}

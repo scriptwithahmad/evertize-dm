@@ -1,9 +1,17 @@
+.awesomeMainDiv{
+    height: 100%;
+    margin-bottom: 20px;
+}
 .card{
     border-radius: 10px;
     transition: .3s linear;
+    padding: 30px;
 }
 .card:hover{
     background-color: #F1137B;
+}
+.card:nth-child(2n+1):hover{
+    background-color: #FA7909;
 }
 .card:hover i{
     color: #ffffff;
@@ -13,4 +21,26 @@
 }
 .card:hover .heading{
     color: #ffffff;
+}
+
+@media screen and (max-width: 1024px) {
+    .awesomeMainDiv{
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 0 4%;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .awesomeMainDiv{
+        grid-template-columns: 1fr 1fr;
+        padding: 30px 6%;
+    }
+}
+@media screen and (max-width: 425px) {
+    .awesomeMainDiv{
+        grid-template-columns: 1fr;
+        padding: 30px 6%;
+    }
 }
