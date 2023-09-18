@@ -69,7 +69,7 @@ const Navbar = () => {
                 <Link
                   className={Router.pathname === v.link ? "active" : ""}
                   style={{
-                    color: Router.pathname === v.link ? "#FA7909" : "#444", // Apply styles conditionally
+                    color: Router.pathname === v.link ? "#FA7909" : "#444",
                   }}
                   href={v.link}
                 >
