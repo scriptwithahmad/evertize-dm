@@ -2,9 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* body {
-  background-color: #eee;
-} */
+
 * {
   margin: 0;
   padding: 0;
@@ -96,3 +94,7 @@
   }
 }
 /* Media queries of HERO SECTION  ----------------------------- */
+/* Navbar active class  */
+.active{
+  font-weight: 500;
+}

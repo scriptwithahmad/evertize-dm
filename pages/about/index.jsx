@@ -5,7 +5,7 @@ import AwesomeWork from "@/components/AwesomeWork";
 const About = () => {
   return (
     <>
-      <Topbar Route="About" />
+      <Topbar Route="About Us" />
       <div className="px-4">
         <div className="py-20 max-w-[1100px] m-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
