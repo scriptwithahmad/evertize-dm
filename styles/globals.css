@@ -27,6 +27,7 @@
   border: none;
   color: #ffffff;
   background-color: #e77918;
+  z-index: 9999;
 }
 
 .btn::after {
@@ -51,7 +52,7 @@
   opacity: 0;
 }
 
-/* Media queries of HERO SECTION  ----------------------------- */
+/* Media queries of HERO SECTION HERO PAGE ----------------------------- */
 @media screen and (max-width: 1024px) {
   .heroMain {
     flex-direction: column;
@@ -97,4 +98,26 @@
 /* Navbar active class  */
 .active{
   font-weight: 500;
+}
+
+/* Animaiton  */
+
+.animateElm{
+  animation: myAnim 5s linear both infinite;
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: .5;
+		transform: translateX(-50px);
+	}
+
+	50% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+	100% {
+		opacity: .5;
+		transform: translateX(-50px);
+	}
 }

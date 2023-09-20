@@ -2,8 +2,8 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="bg-[#eee]">
-      <div className="heroMain max-w-[1200px] m-auto h-full min-h-screen flex  items-center justify-between">
+    <div className="bg-[#eee] relative overflow-hidden">
+      <div className="heroMain max-w-[1200px] m-auto h-full min-h-[90vh] flex  items-center justify-between">
         <div>
           <h1 className="font-extrabold text-[55px] leading-normal max-w-[85%] bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-transparent bg-clip-text">
             Grow Your Bussiness With{" "}
@@ -26,6 +26,21 @@ const Hero = () => {
           alt=""
         />
       </div>
+      <img
+        className="absolute top-[77%] left-[-6%] h-56 animate-pulse"
+        src="/overlay.png"
+        alt="overlay"
+      />
+      <img
+        className="animateElm absolute top-[75%] left-[55%] mix-blend-multiply h-36"
+        src="https://d2pas86kykpvmq.cloudfront.net/landings/squiggel/hero.png"
+        alt=""
+      />
+      {/* <img
+        className="absolute top-0 left-0 mix-blend-multiply"
+        src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA5L3YxMjMwLTAxNi12LmpwZw.jpg"
+        alt=""
+      /> */}
     </div>
   );
 };
