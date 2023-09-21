@@ -21,7 +21,7 @@ const Ceo = () => {
             <br />
             Rather, It Should Be Smart & Targeted
           </h1>
-          <span> - Mr. Saif UL Rehman</span>
+          <span> - Mr. Saif Ur Rehman</span>
         </div>
       </div>
     </div>

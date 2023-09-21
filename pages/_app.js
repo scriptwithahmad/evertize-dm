@@ -8,6 +8,8 @@ import "@/styles/Footer.css";
 import Layout from "@/components/Layout";
 import Loader from "@/components/Loader";
 import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
@@ -18,9 +20,27 @@ export default function App({ Component, pageProps }) {
     }, 1000);
   }, []);
 
+  const router = useRouter();
+
   return (
     <>
-      <Layout>{loading ? <Loader /> : <Component {...pageProps} />}</Layout>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={router.route}
+          className="slide-in"
+          transition={{
+            duration: 0.7,
+          }}
+          initial={{
+            scaleX: 1,
+          }}
+          animate={{
+            scaleX: 0,
+          }}
+          exit={{ scaleX: 1 }}
+        ></motion.div>
+        <Layout>{loading ? <Loader /> : <Component {...pageProps} />}</Layout>
+      </AnimatePresence>
     </>
   );
 }

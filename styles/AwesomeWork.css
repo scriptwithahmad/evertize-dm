@@ -7,6 +7,9 @@
     transition: .3s linear;
     padding: 30px;
 }
+.card:active{
+    border: 1px solid #FA7909;
+}
 .card:hover{
     background-color: #F1137B;
 }

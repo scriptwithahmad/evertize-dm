@@ -3,18 +3,18 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <>
-      <div className="bg-slate-100 relative overflow-hidden">
+      <div className="bg-[#131A29] relative overflow-hidden">
         <footer className="relative z-10 footer_parent max-w-[1200px] m-auto md:px-4">
           <div className="footer_links_main">
             <div className="footer_div_links_col-1">
               <div className="footer_logo">
                 <img src="/logo.png" alt="Footer Logo" />
               </div>
-              <p>
-                Let us help you yield your true academic potential for foreign
-                education. To configure and discover an apt international
-                enrolment strategy, get in touch!
+              <p className="text-[#eee]">
+                We Believe Marketing Doesn't Have to Be Expensive or
+                Complicated, Rather, It Should Be Smart & Targeted
               </p>
+              {/* social links  ----------*/}
               <div className="email_input_div">
                 <i class="fa-brands fa-facebook-f"></i>
                 <i class="fa-brands fa-twitter"></i>
@@ -23,18 +23,18 @@ const Footer = () => {
             </div>
 
             <div className="footer_div_links_col-2">
-              <h3>Explore</h3>
+              <h3 className="text-[#fff]">Explore</h3>
               <ul className="footer_ul_list">
-                <Link href={"/"}>About us</Link>
-                <Link href={"/"}>Courses</Link>
-                <Link href={"/"}>Educal University</Link>
-                <Link href={"/"}>Instructor</Link>
-                <Link href={"/"}>Events</Link>
+                <Link href="/about">About us</Link>
+                <Link href="/service">Service</Link>
+                <Link href="/team">Team</Link>
+                <Link href={"/testimonials"}>Testimonials</Link>
+                <Link href="/contact">Contact</Link>
               </ul>
             </div>
 
             <div className="footer_div_links_col-2">
-              <h3>Links</h3>
+              <h3 className="text-[#fff]">Links</h3>
               <ul className="footer_ul_list">
                 <Link href={"/"}>Partners</Link>
                 <Link href={"/"}>Support the canpaing</Link>
@@ -45,7 +45,7 @@ const Footer = () => {
             </div>
 
             <div className="footer_div_links_col-3">
-              <h3>Information</h3>
+              <h3 className="text-[#fff]">Information</h3>
               <ul>
                 <div className="Links_location_tags">
                   <p>University Offices:</p>
@@ -53,7 +53,7 @@ const Footer = () => {
                 </div>
                 <div className="Links_location_tags">
                   <p>International:</p>
-                  <Link href={"/"}>+(088) 234 567 899</Link>
+                  <Link href={"/"}>+92 300 7797895</Link>
                 </div>
                 <div className="Links_location_tags">
                   <p>International:</p>
@@ -68,15 +68,18 @@ const Footer = () => {
           </div>
         </footer>
         <img
-          className="absolute top-1/2 -left-40"
+          className="absolute top-1/2 -left-40 opacity-5"
           src="/overlay.png"
           alt=""
         />
+        <img
+        className="absolute right-[-10%] top-[200px] opacity-[0.02] w-1/2"
+        src="/overlay2.png"
+        alt=""
+      />
       </div>
     </>
   );
 };
 
 export default Footer;
-
-

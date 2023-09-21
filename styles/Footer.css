@@ -30,7 +30,7 @@
   }
   
   .footer_logo img {
-    width: 150px;
+    width: 200px;
     margin-bottom: 20px;
   }
   
@@ -50,7 +50,7 @@
   }
   
   .footer_ul_list a:hover {
-    color: #1456a3;
+    color: #FA7909;
   }
   
   .Links_location_tags {
@@ -68,7 +68,7 @@
     color: rgb(78, 78, 78);
   }
   .Links_location_tags a:hover {
-    color: #007a70;
+    color: #FA7909;
   }
   
   .email_input_div {
@@ -103,7 +103,7 @@
   }
   
   .fa-linkedin-in:hover {
-    background-color: #0072b1;
+    background-color: #FA7909;
     color: white;
   }
   

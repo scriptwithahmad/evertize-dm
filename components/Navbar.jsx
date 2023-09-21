@@ -20,7 +20,7 @@ const destination = [
 
   {
     name: "Services",
-    link: "/services",
+    link: "/myservices",
   },
 
   {
@@ -69,7 +69,7 @@ const Navbar = () => {
                 <Link
                   className={Router.pathname === v.link ? "active" : ""}
                   style={{
-                    color: Router.pathname === v.link ? "#FA7909" : "#444",
+                    color: Router.pathname === v.link ? "#FA7909" : "#dadada",
                   }}
                   href={v.link}
                 >
