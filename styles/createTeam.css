@@ -1,0 +1,218 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 0;
+  width: 100%;
+  background-color: #0a121e;
+}
+
+.formMain {
+  background-color: #262f3d;
+  padding: 16px 22px;
+  display: flex;
+  box-shadow: 0 0 8px #00000020;
+  border-radius: 8px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.teamMain {
+  border: 1px solid #ffffff3d;
+  width: 30%;
+  min-width: 30%;
+}
+
+@media screen and (max-width: 1024px) {
+  .teamMain {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .teamMain {
+    width: 50%;
+  }
+  
+  .arrow {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .teamMain {
+    width: 80%;
+  }
+}
+
+.imagePreview {
+  background-color: #0a121e;
+  position: relative;
+  border-radius: 8px;
+  width: 100%;
+  margin: auto;
+}
+
+.imagePreview .imageContainer {
+  height: 170px;
+  width: 170px;
+  padding: 20px;
+  margin: auto;
+}
+
+.imagePreview .inputImage {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.imagePreview .delImage {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20%;
+}
+
+.imagePreview .delImage i {
+  font-size: 18px;
+  max-width: fit-content;
+  margin: auto;
+  color: #ababab;
+}
+
+.imagePreview .delImage i:last-child {
+  display: none;
+}
+
+.imagePreview .delImage:hover i:first-child {
+  display: none;
+}
+
+.imagePreview .delImage:hover i:last-child {
+  display: block;
+  animation: move both ease-in-out 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes move {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%, 50%, 70% {
+    color: white;
+    transform: translate3d(-3px, 0, 0);
+  }
+  30%, 60% {
+    transform: translate3d(3px, 0, 0);
+  }
+}
+
+.defaultimageContainer {
+  display: grid;
+  place-items: center;
+}
+
+.defaultImg {
+  height: 100px;
+  width: 100px;
+  max-width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.main .formMain label,
+.main .formMain input {
+  margin-bottom: 8px;
+  color: #ffffffa8;
+}
+
+.main .formMain input,
+.main .formMain textarea {
+  flex-grow: 1;
+  background-color: #0a121eb0;
+  padding: 10px;
+  border: 1px solid #00000020;
+  border-radius: 8px;
+  outline: none;
+}
+
+.main .formMain textarea {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.main .formMain input:focus {
+  border: 1px solid #0065f3;
+}
+
+.main .formMain button {
+  padding: 8px;
+  background: transparent;
+  border: 1px solid #0065f3;
+  color: white;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  position: relative;
+  margin-top: 12px;
+  min-height: 40px;
+  max-height: 40px;
+}
+
+.main .formMain button .arrow {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.main .formMain button .loading {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  border: 4px dashed;
+  animation: loading 0.5s both ease-in-out infinite;
+}
+
+.main .formMain button:hover {
+  opacity: 0.9;
+  background-color: #0065f3;
+}
+
+.main .formMain button:hover .arrow {
+  display: block;
+  animation: myMove 0.5s ease-in-out 1 both;
+}
+
+@keyframes myMove {
+  from {
+    left: 60%;
+    opacity: 1;
+  }
+  to {
+    left: 80%;
+    opacity: 0;
+  }
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

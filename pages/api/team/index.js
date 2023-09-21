@@ -11,7 +11,7 @@ export default async function Handler(req, res) {
       createTeam,
     });
   } catch (error) {
-    console.log(error)
+   toast.error(error)
   }
   res.status(500).json({
     success: false,

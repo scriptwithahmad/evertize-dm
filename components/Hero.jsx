@@ -18,8 +18,7 @@ const Hero = () => {
         </div>
         <img
           className="mix-blend-darken w-[430px] relative z-[3333333333333333333]"
-          // className="mix-blend-darken w-[500px]"
-          // src="https://i.pinimg.com/564x/6d/e1/69/6de169ebed183c8f6ce0973f4119dfd3.jpg"
+          id="heroImg"
           src="/heroshape.png"
           alt="hero image"
         />

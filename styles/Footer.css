@@ -6,9 +6,6 @@
     padding: 170px 15px 50px 15px;
     place-items: center;
   }
-  /* .footer_parent {
-    background-color: #f4f4f4;
-  } */
   .footer_div_links_col-2 h3 {
     font-size: 20px;
     font-weight: 500;
@@ -111,7 +108,7 @@
     display: flex;
     justify-content: center;
   
-    border-top: 1px solid rgb(233, 233, 233);
+    border-top: 1px solid #e9e9e91a;
     padding: 15px 15px;
     text-align: center;
     max-width: 1200px;
@@ -258,7 +255,7 @@
     }
   }
   
-  @media (max-width: 400px) {
+  @media (max-width: 425px) {
     .footer_banner {
       padding: 46px 20px;
     }
@@ -274,7 +271,7 @@
     }
   }
   
-  @media (max-width: 369px) {
+  @media (max-width: 375px) {
     .footer_banner h3 {
       font-size: 25px;
     }
@@ -285,6 +282,11 @@
   
     .input_div_banner_footer button {
       padding: 13px 11px;
+    }
+    .overlayFooter{
+      top: 75%;
+      left: 40%;
+      transform: rotate(180deg);
     }
   }
   

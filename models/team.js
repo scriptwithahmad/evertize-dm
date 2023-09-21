@@ -5,6 +5,7 @@ const teamModel = new mongoose.Schema(
     name: {
       type: String,
       trim: true,
+      required: [true, "Name is Required"],
     },
     design: {
       type: String,
@@ -15,12 +16,6 @@ const teamModel = new mongoose.Schema(
       type: String,
       trim: true,
       required: [true, "Image is Required"],
-    },
-    userID: {
-      type: String,
-      trim: true,
-      unique: true,
-      required: [true, "User ID is Required"],
     },
   },
   { timestamps: true }

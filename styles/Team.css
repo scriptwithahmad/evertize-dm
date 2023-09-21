@@ -1,0 +1,119 @@
+.team_Outer_Div {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.team_Inner_Div {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.team_Item {
+  text-align: center;
+}
+.team_Thumbs {
+  position: relative;
+}
+.team_Shape {
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  bottom: -20px;
+  width: 200px;
+  height: 300px;
+}
+.team_Shape img {
+  height: 100%;
+  width: 100%;
+}
+.team_Inner_Div .teamImgDiv{
+  width: 100%;
+  max-width: 300px;
+  height: 350px;
+}
+.team_Inner_Div .teamImg{
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain; 
+}
+.team_Content {
+  margin-top: 10px;
+}
+.team_Content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  font-weight: 600;
+}
+.team_Content span {
+  display: inline-block;
+  font-size: 14px;
+  color: #5f6160;
+}
+.team_Thumbs:hover .team_Social_Transitions {
+  bottom: 0px;
+  opacity: 1;
+}
+.team_Social_Transitions {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  opacity: 0;
+  opacity: 0;
+  margin-bottom: 18px;
+  transition: all 0.5s linear;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.team_Social_Transitions .team-social-icon {
+  background-color: #ffffff;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  padding: 8px;
+  cursor: pointer;
+}
+.team-social-icon:hover{
+  background-color: #0d6efd;
+}
+.team-social-icon:hover i{
+  color: #ffffff;
+}
+/* .team_Social_Transitions a:hover {
+    cursor: pointer;
+    background-color: #0d6efd;
+    color: white;
+  } */
+/* .fb a:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+.tw a:hover {
+  color: #e5f6fe;
+  background-color: #03a9f4;
+}
+.lin a:hover {
+  color: white;
+  background-color: #0d6efd;
+}
+.pin a:hover {
+  color: #fbe7eb;
+  background-color: #d93067;
+} */
+@media (max-width: 1024px) {
+  .team_Inner_Div {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .team_Inner_Div {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+  }
+}

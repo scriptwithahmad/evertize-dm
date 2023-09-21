@@ -64,11 +64,11 @@ const Footer = () => {
           </div>
 
           <div className="footer_copyrights_span">
-            <span>.© 2023 Evertize All Rights Reserved.</span>
+            <span>© 2023 Evertize All Rights Reserved.</span>
           </div>
         </footer>
         <img
-          className="absolute top-1/2 -left-40 opacity-5"
+          className="overlayFooter absolute top-1/2 -left-40 opacity-5"
           src="/overlay.png"
           alt=""
         />

@@ -9,7 +9,6 @@ const Team = () => {
   const [formData, setFormData] = useState({
     name: "",
     design: "",
-    userID: "",
   });
   const [selectedImage, setSelectedImage] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -100,16 +99,6 @@ const Team = () => {
               name="design"
               id="design"
               value={formData.design}
-              onChange={formDataChangeHandler}
-            />
-            {/* userID ---------*/}
-            <label htmlFor="userID"> User ID </label>
-            <input
-              placeholder="Enter userID userID..."
-              required
-              name="userID"
-              id="userID"
-              value={formData.userID}
               onChange={formDataChangeHandler}
             />
             {/* ------------------ CLOUDINARY ----------------- */}

@@ -5,6 +5,8 @@ import "@/styles/Topbar.css";
 import "@/styles/AwesomeWork.css";
 import "@/styles/Loader.css";
 import "@/styles/Footer.css";
+import "@/styles/Team.css"; 
+import "@/styles/createTeam.css"; 
 import Layout from "@/components/Layout";
 import Loader from "@/components/Loader";
 import { useState, useEffect } from "react";
