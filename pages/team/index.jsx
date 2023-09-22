@@ -37,7 +37,7 @@ const shapes = [
   "https://i.ibb.co/PZHLYxF/team-shape-4.png",
 ];
 
-const index = ({ data }) => {
+const Team = ({ data }) => {
   console.log(data.teamData);
   return (
     <div>
@@ -74,11 +74,12 @@ const index = ({ data }) => {
   );
 };
 
-export default index;
+export default Team;
 
 export async function getServerSideProps() {
-  const res = await fetch("https://evertize.vercel.app/team/get-all-team");
+  const res = await fetch("https://evertize.vercel.app/api/team/get-all-team");
   const data = await res.json();
 
   return { props: { data } };
 }
+
