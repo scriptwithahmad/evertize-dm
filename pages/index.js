@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import ParticlesComponent from "@/components/Particles";
 import Ceo from "@/components/Ceo";
 import AwesomeWork from "@/components/AwesomeWork";
+import Features from "@/components/Features";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,7 @@ export default function Home() {
       <Hero />
       <AwesomeWork />
       <Ceo />
+      <Features />
       {/* <ParticlesComponent /> */}
     </>
   );
