@@ -1,5 +1,6 @@
 import TopBanner from "@/components/Topbar";
 import React from "react";
+import Link from "next/link";
 
 const index = () => {
   return (
@@ -15,13 +16,15 @@ const index = () => {
           />
           <div className="bg-[#eee] p-4">
             <h2 className="line-clamp-1 mb-2 text-[20px] cursor-pointer font-semibold transition-all hover:text-[#E77918]">
-            Graphic Designing
+              Graphic Designing
             </h2>
             <p className="text-gray-800 line-clamp-3 text-sm leading-[1.7] mb-4">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Explicabo, totam eaque atque placeat minima nihil.
             </p>
-            <button className="btn">Get Service</button>
+            <Link href="/clientservice" className="btn">
+              Get Service
+            </Link>
           </div>
         </div>
         {/* card 02 */}
@@ -39,7 +42,9 @@ const index = () => {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Explicabo, totam eaque atque placeat minima nihil.
             </p>
-            <button className="btn">Get Service</button>
+            <Link href="/clientservice" className="btn">
+              Get Service
+            </Link>
           </div>
         </div>
         {/* card 03 */}
@@ -51,13 +56,15 @@ const index = () => {
           />
           <div className="bg-[#eee] p-4">
             <h2 className="line-clamp-1 mb-2 text-[20px] cursor-pointer font-semibold transition-all hover:text-[#E77918]">
-            Outdoor & Indoor Ads
+              Outdoor & Indoor Ads
             </h2>
             <p className="text-gray-800 line-clamp-3 text-sm leading-[1.7] mb-4">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit.
               Explicabo, totam eaque atque placeat minima nihil.
             </p>
-            <button className="btn">Get Service</button>
+            <Link href="/clientservice" className="btn">
+              Get Service
+            </Link>
           </div>
         </div>
       </div>

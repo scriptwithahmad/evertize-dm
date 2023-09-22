@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2% 0;
+  padding: 4% 0;
   width: 100%;
   background-color: #0a121e;
 }
@@ -19,8 +19,18 @@
 
 .teamMain {
   border: 1px solid #ffffff3d;
-  width: 30%;
-  min-width: 30%;
+  width: 35%;
+  min-width: 35%;
+}
+
+.teamMain #serviceName {
+  padding: 10px;
+  outline: none;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #131b28;
+  border: 1px solid #00000020;
 }
 
 @media screen and (max-width: 1024px) {
@@ -31,9 +41,9 @@
 
 @media screen and (max-width: 768px) {
   .teamMain {
-    width: 50%;
+    width: 60%;
   }
-  
+
   .arrow {
     display: none;
   }
@@ -97,17 +107,22 @@
 }
 
 @keyframes move {
-  10%, 90% {
+  10%,
+  90% {
     transform: translate3d(-1px, 0, 0);
   }
-  20%, 80% {
+  20%,
+  80% {
     transform: translate3d(2px, 0, 0);
   }
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     color: white;
     transform: translate3d(-3px, 0, 0);
   }
-  30%, 60% {
+  30%,
+  60% {
     transform: translate3d(3px, 0, 0);
   }
 }

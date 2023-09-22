@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const ServiceModel = new mongoose.Schema({
+const ClientServiceModel = new mongoose.Schema({
   name: {
     type: String,
     trim: true,
@@ -15,7 +15,6 @@ const ServiceModel = new mongoose.Schema({
   phone: {
     type: String,
     trim: true,
-    unique: true,
     required: [true, "Phone Number is Required"],
   },
   serviceName: {
@@ -30,7 +29,7 @@ const ServiceModel = new mongoose.Schema({
         "Outdoor Indoor Ads",
       ],
       default: "Social Media Ads",
-      message: "Service Name Found",
+      message: "Service Name Not Found",
     },
   },
   message: {
@@ -40,5 +39,5 @@ const ServiceModel = new mongoose.Schema({
   },
 });
 
-export default mongoose.models.service ||
-  mongoose.model("service", ServiceModel);
+export default mongoose.models.clientservice ||
+  mongoose.model("clientservice", ClientServiceModel);

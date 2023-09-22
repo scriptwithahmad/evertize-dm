@@ -3,7 +3,7 @@ import React from "react";
 const Features = () => {
   return (
     <>
-      <div className="px-4 bg-[#eee]">
+      <div className="px-4 bg-[#eee]" id="features">
         <div className="py-20 max-w-[1100px] m-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-10">
             <div>
@@ -23,7 +23,7 @@ const Features = () => {
               <div className="grid grid-cols-1 gap-4 py-4 sm:grid-cols-2">
                 {/* card 1 */}
                 <div className="rounded-md p-2 border-[1px] transition-colors active:border-orange-700 border-orange-200 hover:border-orange-300">
-                  <div className="bg-[#f7f7f7] hover:bg-[#ffffff] transition-all rounded-md p-2">
+                  <div className="bg-[#f7f7f7] hover:bg-[#ffffff] transition-all rounded-md p-4">
                     <h1 className="text-[#0F172A] font-[500] text-xl mb-2">
                       Ideas
                     </h1>
@@ -35,7 +35,7 @@ const Features = () => {
                 </div>
                 {/* card 2 */}
                 <div className="rounded-md p-2 border-[1px] transition-colors active:border-orange-700 border-orange-200 hover:border-orange-300">
-                  <div className="bg-[#f7f7f7] hover:bg-[#ffffff] rounded-md p-2">
+                  <div className="bg-[#f7f7f7] hover:bg-[#ffffff] rounded-md p-4">
                     <h1 className="text-[#0F172A] font-[500] text-xl mb-2">
                       Inovation
                     </h1>
@@ -47,7 +47,7 @@ const Features = () => {
                 </div>
                 {/* card 3 */}
                 <div className="rounded-md p-2 border-[1px] transition-colors active:border-orange-700 border-orange-200 hover:border-orange-300 sm:col-span-2">
-                  <div className="bg-[#f7f7f7] hover:bg-[#ffffff] rounded-md px-4 py-4 min-h-[100px] max-h-full">
+                  <div className="bg-[#f7f7f7] hover:bg-[#ffffff] rounded-md px-4 py-4 min-h-[100px] max-h-full p-4">
                     <h1 className="text-[#0F172A] font-[500] text-xl mb-2">
                       Marketing
                     </h1>

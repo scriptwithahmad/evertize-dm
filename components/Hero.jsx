@@ -17,7 +17,7 @@ const Hero = () => {
           <button className="btn"> Contact us </button>
         </div>
         <img
-          className="mix-blend-darken w-[430px] relative z-[3333333333333333333]"
+          className="mix-blend-darken w-[430px] relative top-[50%] z-[3333333333333333333]"
           id="heroImg"
           src="/heroshape.png"
           alt="hero image"

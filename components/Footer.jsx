@@ -8,7 +8,9 @@ const Footer = () => {
           <div className="footer_links_main">
             <div className="footer_div_links_col-1">
               <div className="footer_logo">
-                <img src="/logo.png" alt="Footer Logo" />
+                <Link href={"/"}>
+                  <img src="/logo.png" alt="Footer Logo" />
+                </Link>
               </div>
               <p className="text-[#eee]">
                 We Believe Marketing Doesn't Have to Be Expensive or
@@ -26,7 +28,7 @@ const Footer = () => {
               <h3 className="text-[#fff]">Explore</h3>
               <ul className="footer_ul_list">
                 <Link href="/about">About us</Link>
-                <Link href="/service">Service</Link>
+                <Link href="/myservices">Service</Link>
                 <Link href="/team">Team</Link>
                 <Link href={"/testimonials"}>Testimonials</Link>
                 <Link href="/contact">Contact</Link>
@@ -37,9 +39,9 @@ const Footer = () => {
               <h3 className="text-[#fff]">Links</h3>
               <ul className="footer_ul_list">
                 <Link href={"/"}>Partners</Link>
-                <Link href={"/"}>Support the canpaing</Link>
-                <Link href={"/"}>News & Blogs</Link>
-                <Link href={"/"}>Library</Link>
+                <Link href="#features">Features</Link>
+                <Link href="#work">Our Work History</Link>
+                <Link href="#ceo">CEO Missin</Link>
                 <Link href={"/"}>Contact us</Link>
               </ul>
             </div>
@@ -48,16 +50,16 @@ const Footer = () => {
               <h3 className="text-[#fff]">Information</h3>
               <ul>
                 <div className="Links_location_tags">
-                  <p>University Offices:</p>
-                  <Link href={"/"}>382 NE 191st 87394 Miami,</Link>
+                  <p>Home Town Address</p>
+                  <Link href={"/"}>Green Town Punjab Faislabad, Pakistan</Link>
                 </div>
                 <div className="Links_location_tags">
-                  <p>International:</p>
+                  <p>Phone No</p>
                   <Link href={"/"}>+92 300 7797895</Link>
                 </div>
                 <div className="Links_location_tags">
-                  <p>International:</p>
-                  <Link href={"/"}>info@educal.com</Link>
+                  <p>Email:</p>
+                  <Link href={"/"}>evertize.marketing@gmail.com</Link>
                 </div>
               </ul>
             </div>
@@ -73,10 +75,10 @@ const Footer = () => {
           alt=""
         />
         <img
-        className="absolute right-[-10%] top-[200px] opacity-[0.02] w-1/2"
-        src="/overlay2.png"
-        alt=""
-      />
+          className="absolute right-[-10%] top-[200px] opacity-[0.02] w-1/2"
+          src="/overlay2.png"
+          alt=""
+        />
       </div>
     </>
   );

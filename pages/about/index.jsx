@@ -1,6 +1,7 @@
 import React from "react";
 import Topbar from "@/components/Topbar";
 import AwesomeWork from "@/components/AwesomeWork";
+import Features from "@/components/Features";
 
 const About = () => {
   return (
@@ -54,6 +55,7 @@ const About = () => {
           </div>
         </div>
       </div>
+      <Features />
       <AwesomeWork />
     </>
   );
