@@ -25,7 +25,7 @@ const Team = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await axios.post("/api/addclientservice/", {
+      const res = await axios.post("https://evertize.vercel.app/api/addclientservice/", {
         ...formData,
       });
       toast.success("Your Porposal Succesfully Sent!", {

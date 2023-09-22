@@ -1,6 +1,4 @@
 import React from "react";
-import Link from "next/link";
-import Image from "next/image";
 import TopBanner from "@/components/Topbar";
 
 //Don't OPEN
@@ -79,7 +77,7 @@ const index = ({ data }) => {
 export default index;
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/team/get-all-team");
+  const res = await fetch("https://evertize.vercel.app/team/get-all-team");
   const data = await res.json();
 
   return { props: { data } };
