@@ -62,9 +62,6 @@ const Team = () => {
         duration: 2000,
         position: "top-center",
       });
-      setTimeout(() => {
-        router.push('/myservices')
-      }, 2000);
       setFormData({
         name: "",
         email: "",
@@ -73,6 +70,9 @@ const Team = () => {
         message: "",
       });
       setTempImage("");
+      setTimeout(() => {
+        router.push('/myservices')
+      }, 2000);
     } catch (error) {
       if (error?.response?.data?.message) {
         toast.error(error.response.data.message);

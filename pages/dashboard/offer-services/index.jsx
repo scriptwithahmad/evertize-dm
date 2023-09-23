@@ -4,67 +4,94 @@ import Image from "next/image";
 export default function dashboard({ data }) {
   console.log(data.serviceAll);
   return (
-    <div class="backCover">
-      <div className="dash-wrapper">
-        <div className="filterBox">
-          <h1 className="mainTitle">
-            <span>Services</span> that you offered
-          </h1>
-          <div className="innerInput">
-            <input
-              type="text"
-              placeholder="Search..."
-              // onChange={handleInputChange}
-              // onKeyDown={handleKeyDown}
-            />
-            <button>Search</button>
+    <>
+      <div class="backCover">
+        <div className="dash-wrapper">
+          <div className="filterBox">
+            <h1 className="mainTitle">
+              Services that you offered
+            </h1>
+            <div className="innerInput">
+              <input
+                type="text"
+                // value={query}
+                // onKeyDown={OnKeyEnter}
+                placeholder="Search..."
+                // onChange={handleInputChange}
+              />
+              <button>Search</button>
+            </div>
           </div>
-        </div>
 
-        <div className="dasboard-Main">
-          {data.serviceAll.map((v, i) => {
-            return (
-              <div key={v._id} className="das-col bg-red-300">
-                <div className="das-sub-col">
-                  {/* image */}
-                  <div className="dasImgMain w-[130px]">
-                    <Image
-                      src={v.avatar}
-                      alt="Image Alt"
-                      width={200}
-                      height={200}
-                      className="das-img"
-                    />
-                  </div>
-                  {/* info */}
-                  <div className="das-info">
-                    <h1 className="title mb-2 line-clamp-1">
-                      {v.serviceName}
-                    </h1>
-                    <p className="leading-tight max-w-xl line-clamp-2 text-[14px]">
-                      {v.message}
-                    </p>
-                  </div>
-                  {/* actions */}
-                  <div className="action">
-                    <Link href={"/"}>
-                      <i class="fa-solid fa-eye"></i>
-                    </Link>
-                    <Link href={`/edit/${v._id}`}>
-                      <i class="fa-solid fa-pen-to-square"></i>
-                    </Link>
-                    <i
-                      onClick={() => delPost(v._id)}
-                      class="fa-solid fa-trash"
-                    ></i>
+          {/* ------------------ CATEGORY SECTION START ------------------- */}
+          <div className="cate-buttons">
+            <button>All</button>
+            <button>Programming</button>
+            <button>Digital Marketing</button>
+            <button>Art & Design</button>
+            <button>Education</button>
+            <button>News</button>
+            <button>ECommerace</button>
+          </div>
+          {/* ------------------ CATEGORY SECTION ENDS ------------------- */}
+          <div className="dasboard-Main">
+            {/* {searchError && <p>No matching results found......</p>} */}
+            {data?.serviceAll?.map((v, i) => {
+              return (
+                <div className="das-col" key={i}>
+                  <div className="das-sub-col">
+                    <div className="dasImgMain">
+                      <Image
+                        src={v.avatar}
+                        alt={v.avatar}
+                        width={200}
+                        height={200}
+                        className="das-img"
+                      />
+                    </div>
+                    <div className="das-info">
+                      <h1 className="title"> {v.serviceName} </h1>
+                      <p
+                        style={{ display: "inline-block" }}
+                        className="text-[#eeeeee9a] text-[13px] leading-tight"
+                      >
+                        {v.message.slice(0, 120) + "..."}
+                      </p>
+                      <div className="mt-4 border-[1px] rounded-lg border-[#eeeeee17] p-2">
+                        <div className="flex gap-2 whitespace-nowrap text-[13px]">
+                          <span className="text-[#eeeeeea4] font-light">
+                            Client Name :{" "}
+                          </span>
+                          <h3 className="text-[#eeeeee85] font-medium">
+                            {v.name}
+                          </h3>
+                        </div>
+                        <div className="flex gap-2 whitespace-nowrap text-[13px]">
+                          <span className="text-[#eeeeeea4] font-light">
+                            Client Phone :{" "}
+                          </span>
+                          <h3 className="text-[#eeeeee85] font-medium">
+                            {v.phone}
+                          </h3>
+                        </div>
+                        <div className="flex gap-2 whitespace-nowrap text-[13px]">
+                          <span className="text-[#eeeeeea4] font-light">
+                            Client Email :{" "}
+                          </span>
+                          <h3 className="text-[#eeeeee85] font-medium">
+                            {v.email}
+                          </h3>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
