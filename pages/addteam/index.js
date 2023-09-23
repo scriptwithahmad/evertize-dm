@@ -45,11 +45,12 @@ const Team = () => {
   // SUBMIT FORM ON SUBMIT
   const sumbitHandler = async (e) => {
     e.preventDefault();
+    console.log("function tu chal rha hai!")
     try {
       setLoading(true);
       const imageUrl = await uploadImageToCloudinary();
-      const res = await axios.post("https://evertize.vercel.app/api/team/", {
-      // const res = await axios.post("http://localhost:3000/api/team", {
+      // const res = await axios.post("https://evertize.vercel.app/api/team/", {
+      const res = await axios.post("api/team", {
         ...formData,
         avatar: imageUrl,
       });

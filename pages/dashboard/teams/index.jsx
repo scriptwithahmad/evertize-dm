@@ -1,7 +1,7 @@
 import React from "react";
 
 const Team = ({ data }) => {
-  console.log(data.teamData);
+  // console.log(data.teamData);
   return (
     <div className="bg-[#0A121E] h-full py-8 px-8 text-white">
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">

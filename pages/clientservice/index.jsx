@@ -53,8 +53,8 @@ const Team = () => {
     try {
       setLoading(true);
       const imageUrl = await uploadImageToCloudinary();
-      const res = await axios.post("https://evertize.vercel.app/api/addclientservice/", {
-      // const res = await axios.post("api/addclientservice/", {
+      // const res = await axios.post("https://evertize.vercel.app/api/addclientservice/", {
+      const res = await axios.post("api/addclientservice/", {
         ...formData,
         avatar: imageUrl,
       });
@@ -62,6 +62,9 @@ const Team = () => {
         duration: 2000,
         position: "top-center",
       });
+      setTimeout(() => {
+        router.push('/myservices')
+      }, 2000);
       setFormData({
         name: "",
         email: "",
@@ -70,9 +73,6 @@ const Team = () => {
         message: "",
       });
       setTempImage("");
-      setTimeout(() => {
-        router.push('/myservices')
-      }, 2000);
     } catch (error) {
       if (error?.response?.data?.message) {
         toast.error(error.response.data.message);

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Services({ data }) {
-  console.log(data.serviceAll);
+  // console.log(data.serviceAll);
   return (
     <>
       <div class="backCover">
@@ -96,7 +96,7 @@ export default function Services({ data }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/addclientservice/getall");
+  const res = await fetch("https://evertize.vercel.app/api/addclientservice/getall");
   const data = await res.json();
 
   return { props: { data } };
