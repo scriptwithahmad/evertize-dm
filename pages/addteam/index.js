@@ -48,8 +48,8 @@ const Team = () => {
     try {
       setLoading(true);
       const imageUrl = await uploadImageToCloudinary();
-      // const res = await axios.post("https://evertize.vercel.app/api/team/", {
-      const res = await axios.post("http://localhost:3000/api/team", {
+      const res = await axios.post("https://evertize.vercel.app/api/team/", {
+      // const res = await axios.post("http://localhost:3000/api/team", {
         ...formData,
         avatar: imageUrl,
       });

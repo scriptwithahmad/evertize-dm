@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-export default function dashboard({ data }) {
+export default function Services({ data }) {
   console.log(data.serviceAll);
   return (
     <>
