@@ -32,6 +32,11 @@ const ClientServiceModel = new mongoose.Schema({
       message: "Service Name Not Found",
     },
   },
+  avatar: {
+    type: String,
+    trim: true,
+    required: [true, "Image is Required"],
+  },
   message: {
     type: String,
     trim: true,

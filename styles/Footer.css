@@ -43,11 +43,29 @@
     margin-bottom: 10px;
     text-decoration: none;
     width: fit-content;
-    transition: 0.3s all ease-in-out;
+    transition: 0.3s all linear;
+    position: relative;
   }
   
+  
+  .footer_ul_list a::before{
+    position: absolute;
+    content: ' ';
+    top: 50%;
+    left: 0%;
+    transform: translateX(-50%);
+    background-color: #FA7909;
+    height: 2px;
+    width: 0px;
+    transition: .3s ease-in-out;
+  }
+  .footer_ul_list a:hover::before {
+    width: 10px;
+    left: -10%;
+  }
   .footer_ul_list a:hover {
     color: #FA7909;
+    transform: translateX(10px);
   }
   
   .Links_location_tags {
@@ -65,20 +83,18 @@
     color: rgb(78, 78, 78);
   }
   .Links_location_tags a:hover {
-    color: #FA7909;
+    color: #fa790963;
   }
-  
   .email_input_div {
     display: flex;
     flex-direction: row;
   }
   
   .email_input_div i {
-    border: 1px solid white;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     font-size: 20px;
-    background-color: white;
-    width: 35px;
+    background-color: #eee;
     border-radius: 50%;
     margin-right: 20px;
     color: gray;
@@ -86,8 +102,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 1px 2px rgba(26, 31, 35, 0.07);
-    transition: 0.3s all ease-in-out;
+    transition: 0.3s all linear;
   }
   
   .fa-facebook-f:hover {

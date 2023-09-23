@@ -10,7 +10,6 @@ const Team = () => {
     name: "",
     design: "",
   });
-  const [selectedImage, setSelectedImage] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const formDataChangeHandler = (e) => {

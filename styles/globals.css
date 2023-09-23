@@ -16,6 +16,13 @@
   padding: 4px 18px;
 }
 
+/* hide the button of input  */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/* hide the button of input  */
 /* cta imported buton -------------- */
 .btn {
   position: relative;

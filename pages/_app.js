@@ -6,6 +6,7 @@ import "@/styles/AwesomeWork.css";
 import "@/styles/Loader.css";
 import "@/styles/Footer.css";
 import "@/styles/Team.css"; 
+import "@/styles/dashboard.css"; 
 import "@/styles/createTeam.css"; 
 import Layout from "@/components/Layout";
 import Loader from "@/components/Loader";
