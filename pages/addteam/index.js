@@ -43,18 +43,17 @@ const Team = () => {
 
   //   CLOUDINARY
   // SUBMIT FORM ON SUBMIT
+  
   const sumbitHandler = async (e) => {
     e.preventDefault();
-    console.log("function tu chal rha hai!")
     try {
       setLoading(true);
       const imageUrl = await uploadImageToCloudinary();
-      // const res = await axios.post("https://evertize.vercel.app/api/team/", {
-      const res = await axios.post("api/team", {
+      const res = await axios.post("/api/team", {  // Notice the leading '/'
         ...formData,
         avatar: imageUrl,
       });
-      toast.success("Team Member Added Succesfully!", {
+      toast.success("Team Member Added Successfully!", {
         duration: 2000,
         position: "top-center",
       });
@@ -62,8 +61,10 @@ const Team = () => {
         name: "",
         design: "",
       });
+      setTimeout(() => {
+        router.push("/team");
+      }, 2000);
       setTempImage("");
-      router.push("/team");
     } catch (error) {
       if (error?.response?.data?.message) {
         toast.error(error.response.data.message);
@@ -72,7 +73,6 @@ const Team = () => {
       setLoading(false);
     }
   };
-
   // SUBMIT FORM ON SUBMIT
 
   return (
@@ -85,7 +85,6 @@ const Team = () => {
             <label htmlFor="name"> Name </label>
             <input
               type="text"
-              required
               id="name"
               name="name"
               value={formData.name}
@@ -95,19 +94,17 @@ const Team = () => {
             {/* Desgination ---------*/}
             <label htmlFor="design"> Designation </label>
             <input
-              placeholder="Enter your Designation..."
-              required
               name="design"
               id="design"
               value={formData.design}
               onChange={formDataChangeHandler}
+              placeholder="Enter your Designation..."
             />
             {/* ------------------ CLOUDINARY ----------------- */}
             {tempImage ? (
               <div className="imagePreview">
                 <div className="imageContainer">
                   <Image
-                    required
                     className="inputImage"
                     width={200}
                     height={200}
@@ -123,7 +120,6 @@ const Team = () => {
             ) : (
               <>
                 <input
-                  required
                   type="file"
                   name="avatar"
                   id="avatar"

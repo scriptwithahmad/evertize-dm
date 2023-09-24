@@ -11,7 +11,14 @@ export default async function Handler(req, res) {
       createTeam,
     });
   } catch (error) {
-  console.log(error)
+    console.log(error);
+    if (error.message?.split(":")[2]?.split(",")[0]?.trim()) {
+      var errMessage = error.message.split(":")[2].split(",")[0].trim();
+      return res.status(400).json({
+        success: false,
+        message: errMessage,
+      });
+    }
   }
   res.status(500).json({
     success: false,
