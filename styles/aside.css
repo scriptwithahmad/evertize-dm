@@ -1,0 +1,46 @@
+@media screen and (max-width: 768px) {
+    .asideMain{
+        width: 100px;
+    }
+    .asideLogo{
+        padding: 0;
+    }
+    .asideImg{
+        width: 90px;
+        margin: 10px;
+    }
+    .asideLinks{
+        padding: 0;
+        font-size: 12px;
+    }
+    #asideIcons{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .asideMain{
+        width: 80px;
+    }
+    .asideMain{
+        padding: 0px;
+    }
+    .asideLogo{
+        margin-top: 12px;
+        height: 50px;
+    }
+    .asideImg{
+        width: 65px;
+    }
+    #links{
+        display: none;
+    }
+    #asideIcons{
+        font-size: 18px;
+        margin-left: 10px;
+    }
+    #sIcon{
+        font-size: 18px;
+        margin-left: 10px;
+    }
+}

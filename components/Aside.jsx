@@ -47,20 +47,20 @@ const Aside = () => {
 
   return (
     <aside
-      className={`bg-[#010021] space-y-8 hover:bg-[#010021fb] max-w-full min-w-[200px]`}
+      className={`asideMain bg-[#010021] space-y-8 hover:bg-[#010021fb] max-w-full min-w-[60px]`}
     >
       <div className="flex flex-col h-full">
-        <div className="h-32 w-full flex items-center px-8">
+        <div className="asideLogo h-32 w-full flex items-center px-8">
           <Link href="/" className="flex-none">
             <img
               src="/logo.png"
               width={110}
-              className="mx-auto border-b-[1px] border-slate-700 pb-4"
+              className="asideImg mx-auto border-b-[1px] border-slate-700 pb-4"
             />
           </Link>
         </div>
         <div className="flex-1 flex flex-col h-full">
-          <ul className="px-4 text-sm font-medium flex-1">
+          <ul className="asideLinks px-4 text-sm font-medium flex-1">
             {navLinks.map((v, i) => (
               <li key={i}>
                 <Link
@@ -72,6 +72,7 @@ const Aside = () => {
                   }`}
                 >
                   <i
+                    id="asideIcons"
                     className={`${v.icon} text-sm ${
                       router.pathname === v.href
                         ? "text-blue-50"
@@ -79,6 +80,7 @@ const Aside = () => {
                     }`}
                   ></i>
                   <div
+                  id="links"
                     className={` ${
                       router.pathname === v.href
                         ? "text-blue-100 font-medium"
@@ -96,8 +98,8 @@ const Aside = () => {
                 onMouseLeave={() => setShowDropdown(false)}
                 className="relative flex items-center gap-x-[4px] text-gray-600 p-2 mb-3 rounded-lg hover:bg-[#7078d330] group cursor-pointer"
               >
-                <i className="fa-solid fa-gears text-sm text-gray-500"></i>
-                <div className="text-blue-200">Services</div>
+                <i id="sIcon" className="fa-solid fa-gears text-sm text-gray-500"></i>
+                <div id="links" className="text-blue-200">Services</div>
                 {showDropdown && <DropdownMenu />}
               </div>
             </li>

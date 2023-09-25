@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Services({ data }) {
-  // console.log(data.serviceAll);
   return (
     <>
       <div class="backCover">
@@ -14,6 +13,7 @@ export default function Services({ data }) {
             <div className="innerInput">
               <input
                 type="text"
+                className="input"
                 // value={query}
                 // onKeyDown={OnKeyEnter}
                 placeholder="Search..."

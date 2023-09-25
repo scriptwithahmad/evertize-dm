@@ -8,6 +8,7 @@ import "@/styles/Footer.css";
 import "@/styles/Team.css"; 
 import "@/styles/dashboard.css"; 
 import "@/styles/createTeam.css"; 
+import "@/styles/aside.css"; 
 import Layout from "@/components/Layout";
 import Loader from "@/components/Loader";
 import { useState, useEffect } from "react";

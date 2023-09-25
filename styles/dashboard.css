@@ -63,7 +63,7 @@
 .dash-wrapper .mainTitle {
   color: #eeeeeed2;
   padding: 0 2%;
-  font-size: 32px;
+  font-size: clamp(1.25rem, 0.9714rem + 1.3714vw, 2rem);
   font-weight: 600;
   margin: 14px 12px;
 }
@@ -155,6 +155,44 @@
 .das-col .action i:hover {
   opacity: 0.8;
   cursor: pointer;
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+  .filterBox{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eeeeee2f;
+  }
+  .dasboard-Main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .filterBox{
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eeeeee2f;
+  }
+  .dasboard-Main {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+@media screen and (max-width: 425px) {
+  .filterBox{
+    padding: 0 10px;
+    padding-bottom: 10px;
+  }
+  .dasboard-Main {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Dashboard */
