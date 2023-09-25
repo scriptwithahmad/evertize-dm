@@ -165,7 +165,7 @@
   border: 1px solid #0065f3;
 }
 
-.main .formMain button {
+.mybtn {
   padding: 8px;
   background: transparent;
   border: 1px solid #0065f3;
@@ -179,7 +179,7 @@
   max-height: 40px;
 }
 
-.main .formMain button .arrow {
+.mybtn .arrow {
   position: absolute;
   top: 50%;
   left: 60%;
@@ -187,7 +187,7 @@
   display: none;
 }
 
-.main .formMain button .loading {
+.mybtn .loading {
   position: absolute;
   top: 25%;
   left: 50%;
@@ -199,12 +199,12 @@
   animation: loading 0.5s both ease-in-out infinite;
 }
 
-.main .formMain button:hover {
+.mybtn:hover {
   opacity: 0.9;
   background-color: #0065f3;
 }
 
-.main .formMain button:hover .arrow {
+.mybtn:hover .arrow {
   display: block;
   animation: myMove 0.5s ease-in-out 1 both;
 }

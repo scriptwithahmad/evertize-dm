@@ -5,6 +5,9 @@
   min-height: 100%;
   background-color: #0a121e;
   background-image: url("https://img.freepik.com/free-vector/halftone-background-with-circles_23-2148907689.jpg?size=626&ext=jpg&ga=GA1.1.1572214017.1676789510&semt=sph");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .dash-wrapper {

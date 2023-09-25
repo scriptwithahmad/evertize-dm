@@ -2,14 +2,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Services({ data }) {
+  console.log(data);
   return (
     <>
       <div class="backCover">
         <div className="dash-wrapper">
           <div className="filterBox">
-            <h1 className="mainTitle">
-              Services that you offered
-            </h1>
+            <h1 className="mainTitle">Services that you offered</h1>
             <div className="innerInput">
               <input
                 type="text"
@@ -36,7 +35,9 @@ export default function Services({ data }) {
           {/* ------------------ CATEGORY SECTION ENDS ------------------- */}
           <div className="dasboard-Main">
             {/* {searchError && <p>No matching results found......</p>} */}
-            {data?.serviceAll?.map((v, i) => {
+            {data?.message?.map((v, i) => {
+               const createdAtDate = new Date(v.createdAt);
+               const month = createdAtDate.toLocaleString('default', { month: 'long' });
               return (
                 <div className="das-col" key={i}>
                   <div className="das-sub-col">
@@ -50,36 +51,28 @@ export default function Services({ data }) {
                       />
                     </div>
                     <div className="das-info">
-                      <h1 className="title"> {v.serviceName} </h1>
+                      <h1 className="title"> {v.title} </h1>
                       <p
                         style={{ display: "inline-block" }}
                         className="text-[#eeeeee9a] text-[13px] leading-tight"
                       >
-                        {v.message.slice(0, 120) + "..."}
+                        {v.desc}
                       </p>
                       <div className="mt-4 border-[1px] rounded-lg border-[#eeeeee17] p-2">
                         <div className="flex gap-2 whitespace-nowrap text-[13px]">
                           <span className="text-[#eeeeeea4] font-light">
-                            Client Name :{" "}
+                            Service Uploaded By :{" "}
                           </span>
                           <h3 className="text-[#eeeeee85] font-medium">
-                            {v.name}
+                            {v.author}
                           </h3>
                         </div>
                         <div className="flex gap-2 whitespace-nowrap text-[13px]">
                           <span className="text-[#eeeeeea4] font-light">
-                            Client Phone :{" "}
+                            Uploaded Time :{" "}
                           </span>
                           <h3 className="text-[#eeeeee85] font-medium">
-                            {v.phone}
-                          </h3>
-                        </div>
-                        <div className="flex gap-2 whitespace-nowrap text-[13px]">
-                          <span className="text-[#eeeeeea4] font-light">
-                            Client Email :{" "}
-                          </span>
-                          <h3 className="text-[#eeeeee85] font-medium">
-                            {v.email}
+                          {month} {createdAtDate.getDate()}, {createdAtDate.getFullYear()}
                           </h3>
                         </div>
                       </div>
@@ -96,7 +89,7 @@ export default function Services({ data }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("https://evertize.vercel.app/api/addclientservice/getall");
+  const res = await fetch("https://evertize.vercel.app//api/addservice");
   const data = await res.json();
 
   return { props: { data } };

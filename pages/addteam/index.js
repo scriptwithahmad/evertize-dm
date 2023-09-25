@@ -138,7 +138,7 @@ const Team = () => {
             )}
             {/* ------------------ CLOUDINARY ----------------- */}
 
-            <button type="submit">
+            <button type="submit" className="mybtn">
               {loading ? <span className="loading"></span> : "Submit"}
               <i class="arrow fa-solid fa-arrow-right"></i>
             </button>

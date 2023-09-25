@@ -15,7 +15,7 @@ const DropdownMenu = () => {
       </li>
       <li>
         <Link
-          href="/clientservice"
+          href="/dashboard/addservice"
           className="block p-2 px-4 rounded-lg text-white hover:bg-[#7078d330]"
         >
           Add Service
