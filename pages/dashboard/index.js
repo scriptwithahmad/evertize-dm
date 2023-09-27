@@ -1,13 +1,9 @@
 import React from 'react'
 
-const index = () => {
+const Dashboard = () => {
   return (
-    <>
-    <div className='bg-[#0A121E] h-full text-white'>
-      <h1>Dashbaord</h1>
-    </div>
-    </>
+    <div>Dashboard Main Page</div>
   )
 }
 
-export default index
+export default Dashboard

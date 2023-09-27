@@ -37,6 +37,14 @@ const destination = [
     name: "Contact",
     link: "/contact",
   },
+  {
+    name: "Register",
+    link: "/register",
+  },
+  {
+    name: "Login",
+    link: "/login",
+  },
 ];
 
 const Navbar = () => {
