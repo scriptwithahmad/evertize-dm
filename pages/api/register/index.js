@@ -1,6 +1,8 @@
 import dbConnect from "@/config/dbConnect";
 import userModel from "@/models/user";
 import bcrypt from "bcryptjs";
+import { serialize } from "cookie";
+import jwt from "jsonwebtoken";
 
 export default async function Handler(req, res) {
   dbConnect();
@@ -9,7 +11,7 @@ export default async function Handler(req, res) {
     if (!req.body.userName) {
       res.status(400).json({
         success: false,
-        message: "Username from API is Required!",
+        message: "Username Required!",
       });
       return;
     }
@@ -17,7 +19,7 @@ export default async function Handler(req, res) {
     if (!req.body.email) {
       res.status(400).json({
         success: false,
-        message: "Email from api is Required!",
+        message: "Email Required!",
       });
       return;
     }
@@ -25,7 +27,7 @@ export default async function Handler(req, res) {
     if (!req.body.password) {
       res.status(400).json({
         success: false,
-        message: "Password from api is Required!",
+        message: "Password Required!",
       });
       return;
     }
@@ -36,6 +38,7 @@ export default async function Handler(req, res) {
       password: hashedPassword,
     });
 
+    
     res.status(201).json({
       success: true,
       message: user,

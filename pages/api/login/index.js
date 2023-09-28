@@ -2,11 +2,10 @@ import dbConnect from "@/config/dbConnect";
 import userModel from "@/models/user";
 import jwt  from "jsonwebtoken";
 import bcrypt from "bcryptjs";
-import cookieParser from "cookie-parser";
+import { serialize } from "cookie";
 
 export default async function Handler(req, res) {
   dbConnect();
-  const cookie = cookieParser();
 
   try {
     const { email, password } = req.body;
@@ -26,7 +25,7 @@ export default async function Handler(req, res) {
     if (!foundUser) {
       res.status(404).json({
         success: false,
-        message: "Invalid email!",
+        message: "Invalid email or Password!",
       });
       return;
     }
@@ -42,17 +41,9 @@ export default async function Handler(req, res) {
       return;
     }
 
+   
 
-
-    const token = jwt.sign({ id: foundUser._id },process.env.NEAXTAUTH_SECRET, {
-        expiresIn: "20s",
-    });
-
-
-    res.cookie("accessToke", token)
-
-
-    // If email and password are valid, you can generate a token or session here.
+    // If email and password are valid
 
     res.status(200).json({
       success: true,
