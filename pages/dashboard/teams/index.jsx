@@ -1,7 +1,33 @@
+import { useRouter } from "next/router";
 import React from "react";
 
 const Team = ({ data }) => {
-  // console.log(data.teamData);
+  const router = useRouter();
+
+   const delTeamMember = async (id) => {
+    try {
+      if (window.confirm("Do you want to delete this Member!")) {
+        const res = await fetch(`/api/team${id}`, {
+          method: "DELETE",
+        });
+
+        if (
+          toast.success("Team Member is Delete Successfully", {
+            duration: 2000,
+            position: "top-right",
+          })
+        ) {
+          router.push("/");
+        } else {
+          toast.error("Something went Wrong");
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
   return (
     <div className="bg-[#0A121E] h-full py-8 px-8 text-white">
       <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -125,13 +151,15 @@ const Team = ({ data }) => {
                   <td class="px-6 py-4">{v.design}</td>
                   <td class="px-6 py-4">
                     <div class="flex items-center">
-                      <div class="h-2.5 w-2.5 rounded-full bg-green-500 mr-2"></div>{" "}
+                      <div class="h-2.5 w-2.5 rounded-full bg-orange-300 mr-2"></div>{" "}
                       Online
                     </div>
                   </td>
                   <td class="px-6">
                     <a href="#" class="font-medium text-[#E77918]">
-                      <i class="fa-regular fa-trash-can"></i>
+                      <i 
+                         onClick={() => delTeamMember(v._id)}
+                        class="fa-regular fa-trash-can"></i>
                     </a>
                     <a href="#" class="font-medium text-[#E77918]">
                       <i class="fa-regular fa-pen-to-square"></i>

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import { Toaster, toast } from "react-hot-toast";
@@ -8,9 +8,11 @@ import { Toaster, toast } from "react-hot-toast";
 import dynamic from "next/dynamic";
 const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
-const updateService = () => {
+const Experience = () => {
   const editor = useRef(null);
   const router = useRouter();
+  const slug = router.query.slug;
+
   const [formData, setFormData] = useState({
     title: "",
     desc: "",
@@ -47,27 +49,27 @@ const updateService = () => {
     }
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await fetch(`/api/addservice/${slug}`);
+      const data = await res.json();
+
+      setFormData(data?.singleService);
+    };
+    fetchData();
+  }, []);
+
   // submit form  -----------//
   const sumbitHandler = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
       const imageUrl = await uploadImageToCloudinary();
-      const res = await axios.post("/api/addservice/", {
+      const res = await axios.put(`/api/addservice/${slug}`, {
         ...formData,
         avatar: imageUrl,
       });
-      toast.success("Service addedd Successfully!", {
-        duration: 2000,
-        position: "top-center",
-      });
-      setFormData({
-        title: "",
-        desc: "",
-        author: "",
-      });
-      router.push("/dashboard");
-      setTempImage("");
+      router.push("/dashboard/offer-services");
     } catch (error) {
       if (error?.response?.data?.message) {
         toast.error(error.response.data.message);
@@ -131,7 +133,11 @@ const updateService = () => {
                     alt="Service Alt Image"
                   />
                 </div>
-                <button title="Remove Image" className="bg-blue-600 px-6 py-1 rounded-lg absolute top-[53%] left-1/2 -translate-x-1/2" onClick={() => setTempImage("")}>
+                <button
+                  title="Remove Image"
+                  className="bg-blue-600 px-6 py-1 rounded-lg absolute top-[53%] left-1/2 -translate-x-1/2"
+                  onClick={() => setTempImage("")}
+                >
                   <i class="text-white fa-regular fa-trash-can"></i>
                 </button>
               </div>
@@ -177,7 +183,7 @@ const updateService = () => {
           </div>
 
           <button type="submit" className="mybtn">
-            {loading ? <span className="loading"></span> : "Submit"}
+            {loading ? <span className="loading"></span> : "Update"}
             <i class="arrow fa-solid fa-arrow-right"></i>
           </button>
         </form>
@@ -186,4 +192,4 @@ const updateService = () => {
   );
 };
 
-export default updateService;
+export default Experience;
