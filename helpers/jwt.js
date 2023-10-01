@@ -5,7 +5,7 @@ async function GenAccessToken(data) {
     .setProtectedHeader({ alg: "HS256" })
     .setExpirationTime("1d")
     .setIssuedAt()
-    .sign(new TextEncoder().encode(process.env.NEAXTAUTH_SECRET));
+    .sign(new TextEncoder().encode(process.env.AUTH_SECRET));
 
     return token;
   }
@@ -15,7 +15,7 @@ async function JWTVerify(token) {
   try {
     var { payload } = await jwtVerify(
       token,
-      new TextEncoder().encode(process.env.NEAXTAUTH_SECRET)
+      new TextEncoder().encode(process.env.AUTH_SECRET)
       );
       // console.log(payload?.isAdmin)
     return payload;

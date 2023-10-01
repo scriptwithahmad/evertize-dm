@@ -14,6 +14,7 @@ const nextConfig = {
     DB_URI:
       "mongodb+srv://ahmed:ahmed@edify.9anuaq1.mongodb.net/evertize?retryWrites=true&w=majority",
       NEAXTAUTH_SECRET: "MarketingWebsite",
+      AUTH_SECRET: "authentitionSecretKey"
   },
 };
 
