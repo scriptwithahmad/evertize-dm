@@ -21,7 +21,6 @@ const Login = () => {
       const res = await axios.post("/api/login/", {
         ...formData,
       });
-      console.log(formData);
       toast.success("Login Successfully!");
       setFormData({
         email: "",
@@ -41,7 +40,7 @@ const Login = () => {
   return (
     <>
       <section class="bg-[#eee]">
-        <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-full lg:py-0">
+        <div class="flex flex-col items-center justify-center px-6 py-2 mx-auto md:h-full md:py-8 lg:py-10">
           <div class="w-full rounded-lg shadow border my-8 sm:max-w-md xl:p-0 bg-white">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
               <Link
@@ -95,7 +94,7 @@ const Login = () => {
                 <div>
                   <button
                     type="submit"
-                    class="w-full mb-3 text-white bg-blue-500 transition-colors hover:bg-blue-700 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                    class="w-full mb-3 text-white bg-[#E77818] transition-colors hover:bg-[#fa7f13] focus:focus:ring-4 ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                   >
                     Sign In
                   </button>

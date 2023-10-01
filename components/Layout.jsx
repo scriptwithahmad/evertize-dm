@@ -35,7 +35,7 @@ const Layout = ({ children }) => {
           <div>
 
             <Navbar />
-            <div className="relative isolate min-h-[100vh] overflow-hidden">
+            <div className="relative isolate overflow-hidden">
           
               {children}
        

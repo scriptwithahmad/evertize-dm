@@ -61,8 +61,8 @@ const Team = ({ data }) => {
                   />
                   <div className="h-[100%] w-[0%] absolute top-0 transition-all group-hover:w-[100%] bg-[#131a29ce] mix-blend-multiply backdrop-blur-sm"></div>
                   <div className="h-[100%] w-[100%] absolute top-0 flex flex-col justify-center items-center text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity">
-                    <h2 className="font-bold text-orange-500 mb-4">{v.name}</h2>
-                    <h4>{v.design}</h4>
+                    <h2 className="font-bold text-orange-500 mb-2">{v.name}</h2>
+                    <h4 className="text-base">{v.design}</h4>
                   </div>
                 </div>
               );

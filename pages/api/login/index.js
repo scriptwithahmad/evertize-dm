@@ -1,8 +1,8 @@
 import dbConnect from "@/config/dbConnect";
 import userModel from "@/models/user";
-import jwt  from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { serialize } from "cookie";
+import { GenAccessToken } from "@/helpers/jwt";
 
 export default async function Handler(req, res) {
   dbConnect();
@@ -41,7 +41,34 @@ export default async function Handler(req, res) {
       return;
     }
 
-   
+    const AccessToken = await GenAccessToken({
+      email: foundUser.email,
+      id: foundUser._id,
+      userName: foundUser.userName,
+      isAdmin: foundUser.isAdmin,
+    });
+
+    res.setHeader(
+      "Set-Cookie",
+      serialize("AccessToken", AccessToken, {
+        path: "/",
+        httpOnly: true,
+        secure: true,
+      })
+    );
+
+    var user = {
+      id: foundUser._id,
+      email: foundUser.email,
+      userName: foundUser.userName,
+      isAdmin: foundUser.isAdmin,
+    };
+
+
+    res.json({
+      user,
+      success: true,
+    });
 
     // If email and password are valid
 
@@ -49,7 +76,6 @@ export default async function Handler(req, res) {
       success: true,
       message: "Login Successful!",
     });
-
   } catch (error) {
     console.error(error);
     res.status(500).json({

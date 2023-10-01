@@ -25,10 +25,34 @@ const DropdownMenu = () => {
     </ul>
   );
 };
+const DropdownMenuTeam = () => {
+  return (
+    <ul className="absolute left-full top-0 z-20 w-40 bg-[#010021] mt-2 p-2 rounded-lg">
+      <li>
+        <Link
+          href="/dashboard/teams"
+          className="transition-all block py-2 px-4 rounded-lg text-white hover:bg-[#7078d330]"
+        >
+          Team Members
+        </Link>
+      </li>
+      <li>
+        <Link
+          href="/addteam"
+          className="block p-2 px-4 rounded-lg text-white hover:bg-[#7078d330]"
+        >
+          Add Team
+        </Link>
+      </li>
+      {/* Add more services as needed */}
+    </ul>
+  );
+};
 
 const Aside = () => {
   const router = useRouter();
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showDropdownTeam, setShowDropdownTeam] = useState(false);
 
   var navLinks = [
     {
@@ -42,7 +66,7 @@ const Aside = () => {
       lable: "Enquiries",
       icon: "fa-solid fa-table-list",
     },
-    { href: "/dashboard/teams", lable: "Teams", icon: "fa-solid fa-users" },
+    // { href: "/dashboard/teams", lable: "Teams", icon: "fa-solid fa-users" },
   ];
 
   return (
@@ -101,6 +125,17 @@ const Aside = () => {
                 <i id="sIcon" className="fa-solid fa-gears text-sm text-gray-500"></i>
                 <div id="links" className="text-blue-200">Services</div>
                 {showDropdown && <DropdownMenu />}
+              </div>
+            </li>
+            <li>
+              <div
+                onMouseEnter={() => setShowDropdownTeam(true)}
+                onMouseLeave={() => setShowDropdownTeam(false)}
+                className="relative flex items-center gap-x-[4px] text-gray-600 p-2 mb-3 rounded-lg hover:bg-[#7078d330] group cursor-pointer"
+              >
+                <i id="sIcon" className="fa-solid fa-gears text-sm text-gray-500"></i>
+                <div id="links" className="text-blue-200">Teams</div>
+                {showDropdownTeam && <DropdownMenuTeam />}
               </div>
             </li>
           </ul>

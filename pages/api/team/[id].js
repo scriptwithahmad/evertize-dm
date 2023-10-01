@@ -5,6 +5,30 @@ export default async function Handler(req, res) {
   dbConnect();
 
   switch (req.method) {
+    case "GET":
+      try {
+        const postId = req.query.id;
+        const singleTeaMmebmer = await teamModel.findById(postId);
+
+        if (!singleTeaMmebmer) {
+          return res.status(404).json({
+            success: false,
+            message: "Team Member not Found!",
+          });
+        }
+        res.status(200).json({
+          success: true,
+          singleTeaMmebmer,
+        });
+      } catch (error) {
+        res.status(404).json({
+          success: false,
+          error,
+        });
+      }
+
+      break;
+
     case "DELETE":
       try {
         const postId = req.query.id;
@@ -51,7 +75,7 @@ export default async function Handler(req, res) {
         return res.status(200).json({
           success: true,
           message: "Team Member Successfully Updated!",
-          updatedPost: updatedPost,
+          updatedPost,
         });
       } catch (error) {
         console.error(error);
