@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 
 const Login = () => {
+  const [loading, setLoading] = useState(false)
   const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
@@ -18,7 +19,8 @@ const Login = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/login/", {
+      setLoading(true)
+      const res = await axios.post("https://evertize.vercel.app/api/login/", {
         ...formData,
       });
       toast.success("Login Successfully!");
@@ -34,6 +36,8 @@ const Login = () => {
       if (error?.response?.data?.message) {
         toast.error(error.response.data.message);
       }
+    } finally{
+      setLoading(false)
     }
   };
 
@@ -96,7 +100,7 @@ const Login = () => {
                     type="submit"
                     class="w-full mb-3 text-white bg-[#E77818] transition-colors hover:bg-[#fa7f13] focus:focus:ring-4 ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                   >
-                    Sign In
+                    {loading ? "Loading.." : "Sing In"}
                   </button>
                   <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                     Already have an account?{" "}

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 const index = () => {
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const [formData, setFormData] = useState({
     fullName: "",
@@ -45,15 +46,15 @@ const index = () => {
 
   // Submit Data
   const submitHandler = async (e) => {
-    console.log(e);
     e.preventDefault();
     try {
+      setLoading(true);
       const imageUrl = await uploadImageToCloudinary();
       const res = await axios.post("/api/register/", {
         ...formData,
         avatar: imageUrl,
       });
-      toast.success("Login Successfully!");
+      toast.success("User Register Successfully!");
       setFormData({
         fullName: "",
         userName: "",
@@ -68,6 +69,8 @@ const index = () => {
       if (error?.response?.data?.message) {
         toast.error(error.response.data.message);
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -232,8 +235,9 @@ const index = () => {
                     type="submit"
                     class="w-full mb-3 text-white bg-[#E77818] transition-colors hover:bg-[#fa7f13] focus:ring-4 ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
                   >
-                    Sign Up
+                    {loading ? "Loading.." : "Sing Up"}
                   </button>
+
                   <p class="text-sm font-light text-gray-500 dark:text-gray-400">
                     Already have an account?{" "}
                     <Link

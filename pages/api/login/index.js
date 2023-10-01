@@ -74,7 +74,7 @@ export default async function Handler(req, res) {
 
     res.status(200).json({
       success: true,
-      message: "Login Successful!",
+      message: "User Login Successful!",
     });
   } catch (error) {
     console.error(error);

@@ -1,8 +1,6 @@
 import dbConnect from "@/config/dbConnect";
 import userModel from "@/models/user";
 import bcrypt from "bcryptjs";
-import { serialize } from "cookie";
-import jwt from "jsonwebtoken";
 
 export default async function Handler(req, res) {
   dbConnect();
