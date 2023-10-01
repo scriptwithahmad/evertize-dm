@@ -20,7 +20,7 @@ const Login = () => {
     e.preventDefault();
     try {
       setLoading(true)
-      const res = await axios.post("https://evertize.vercel.app/api/login/", {
+      const res = await axios.post("/api/login/", {
         ...formData,
       });
       toast.success("Login Successfully!");
