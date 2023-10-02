@@ -8,7 +8,7 @@ const About = () => {
     <>
       <Topbar Route="About Us" />
       <div className="px-4">
-        <div className="py-20 max-w-[1100px] m-auto">
+        <div className="py-20 max-w-[1200px] m-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
             <div>
               <p className="text-base font-inter font-semibold leading-7 text-[#E77918]">

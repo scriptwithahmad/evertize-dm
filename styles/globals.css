@@ -36,7 +36,14 @@ input[type="number"]::-webkit-outer-spin-button {
   background-color: #e77918;
   z-index: 99;
 }
-
+.serviceBtn {
+  margin: 10px 0 0 0;
+  padding: 8px 18px;
+  font-size: 13px;
+}
+.serviceBtn:active{
+  transform: scale(.9);
+}
 .btn::after {
   content: "";
   display: inline-block;

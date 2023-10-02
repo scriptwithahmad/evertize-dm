@@ -1,11 +1,16 @@
 import Link from "next/link";
 import Image from "next/image";
-import axios from "axios";
 import { toast, Toaster } from "react-hot-toast";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 export default function Services({ data }) {
+  console.log(data);
   const router = useRouter();
+  const [edit, setEdit] = useState(data.message);
+  function createMarkup(c) {
+    return { __html: c };
+  }
 
   // delete service by slug -----------//
   const delService = async (slug) => {
@@ -19,7 +24,7 @@ export default function Services({ data }) {
           setTimeout(() => {
             toast.success("Service has been Deleted Successfully!");
           }, 1000);
-         } else {
+        } else {
           toast.error("Something went wrong!");
         }
       }
@@ -79,9 +84,14 @@ export default function Services({ data }) {
                       />
                     </div>
                     <div className="das-info">
-                      <h1 className="title"> {v.title} </h1>
+                      <h1 className="title line-clamp-2"> {v.title} </h1>
                       <p className="text-[#eeeeee9a] text-[13px] leading-tight line-clamp-3">
-                        {v.desc}
+                        {edit && (
+                          <div
+                            className="line-clamp-3"
+                            dangerouslySetInnerHTML={createMarkup(v.desc)}
+                          ></div>
+                        )}
                       </p>
                       <div className="mt-4 border-[1px] rounded-lg border-[#eeeeee17] p-2">
                         <div className="flex gap-2 whitespace-nowrap text-[13px]">
@@ -104,7 +114,7 @@ export default function Services({ data }) {
                         <div className="flex gap-6 items-center my-2">
                           <Link
                             className="text-[#eeeeeea1] hover:text-white"
-                            href={"/dashboard/offer-services"}
+                            href={`/sservices/${v.slug}`}
                           >
                             <i class="fa-solid fa-eye"></i>
                           </Link>
@@ -138,7 +148,7 @@ export default function Services({ data }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("https://evertize.vercel.app//api/addservice");
+  const res = await fetch("https://evertize.vercel.app/api/addservice");
   const data = await res.json();
 
   return { props: { data } };

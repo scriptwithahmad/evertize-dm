@@ -4,7 +4,7 @@ const Features = () => {
   return (
     <>
       <div className="px-4 bg-[#eee]" id="features">
-        <div className="py-20 max-w-[1100px] m-auto">
+        <div className="py-20 max-w-[1200px] m-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-10">
             <div>
               <img

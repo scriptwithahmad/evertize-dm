@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       {privateRoutes.includes(pathname) ? (
-        <div className="flex h-[100vh] overflow-hidden">
+        <div className="flex min-h-[100vh] max-h-full overflow-hidden">
           <Aside />
           <div className=" overflow-auto flex-1">
             {children}
@@ -33,13 +33,8 @@ const Layout = ({ children }) => {
           <Particles />
           <Toaster />
           <div>
-
             <Navbar />
-            <div className="relative isolate overflow-hidden">
-          
-              {children}
-       
-            </div>
+            <div className="relative isolate overflow-hidden">{children}</div>
             <Footer />
           </div>
         </div>

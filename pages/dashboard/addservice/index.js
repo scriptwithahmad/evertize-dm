@@ -121,17 +121,21 @@ const updateService = () => {
           {/* ------------------ CLOUDINARY ----------------- */}
           <div>
             {tempImage ? (
-              <div className="">
+              <div className="relative">
                 <div className="">
                   <Image
-                    className="relative w-full h-[280px] object-cover rounded-lg"
+                    className="w-full h-[280px] object-cover rounded-lg"
                     width={200}
                     height={200}
                     src={URL.createObjectURL(tempImage)}
                     alt="Service Alt Image"
                   />
                 </div>
-                <button title="Remove Image" className="bg-blue-600 px-6 py-1 rounded-lg absolute top-[53%] left-1/2 -translate-x-1/2" onClick={() => setTempImage("")}>
+                <button
+                  title="Remove Image"
+                  className="bg-blue-600 px-6 py-1 rounded-lg absolute top-[3%] -right-[4%] -translate-x-1/2"
+                  onClick={() => setTempImage("")}
+                >
                   <i class="text-white fa-regular fa-trash-can"></i>
                 </button>
               </div>
@@ -161,8 +165,7 @@ const updateService = () => {
           {/* JoditEditor Description ----------------------*/}
           <div>
             <label className="text-gray-100" htmlFor="desc">
-              {" "}
-              Description{" "}
+              Description
             </label>
             <div className="jodit">
               <JoditEditor

@@ -20,32 +20,32 @@ const Team = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-   //   CLOUDINARY
-   const [tempImage, setTempImage] = useState("");
+  //   CLOUDINARY
+  const [tempImage, setTempImage] = useState("");
 
-   const uploadImageToCloudinary = async () => {
-     try {
-       const data = new FormData();
-       data.append("file", tempImage);
-       data.append("upload_preset", "blog-image");
- 
-       const res = await fetch(
-         "https://api.cloudinary.com/v1_1/dmyrswz0r/image/upload",
-         {
-           body: data,
-           method: "POST",
-         }
-       );
- 
-       const jsonRes = await res.json();
- 
-       return jsonRes.secure_url;
-     } catch (error) {
-       alert("Something wrong! while Uplading image");
-     }
-   };
- 
-   //   CLOUDINARY
+  const uploadImageToCloudinary = async () => {
+    try {
+      const data = new FormData();
+      data.append("file", tempImage);
+      data.append("upload_preset", "blog-image");
+
+      const res = await fetch(
+        "https://api.cloudinary.com/v1_1/dmyrswz0r/image/upload",
+        {
+          body: data,
+          method: "POST",
+        }
+      );
+
+      const jsonRes = await res.json();
+
+      return jsonRes.secure_url;
+    } catch (error) {
+      alert("Something wrong! while Uplading image");
+    }
+  };
+
+  //   CLOUDINARY
 
   // SUBMIT FORM ON SUBMIT
   const sumbitHandler = async (e) => {
@@ -63,7 +63,7 @@ const Team = () => {
         position: "top-center",
       });
       setTimeout(() => {
-        router.push('/myservices')
+        router.push("/myservices");
       }, 2000);
       setFormData({
         name: "",
@@ -148,8 +148,8 @@ const Team = () => {
               placeholder="write about your service that you need..."
             ></textarea>
 
-                    {/* ------------------ CLOUDINARY ----------------- */}
-                    {tempImage ? (
+            {/* ------------------ CLOUDINARY ----------------- */}
+            {tempImage ? (
               <div className="imagePreview">
                 <div className="imageContainer">
                   <Image

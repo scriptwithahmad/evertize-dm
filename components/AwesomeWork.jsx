@@ -2,7 +2,7 @@ import React from "react";
 
 const AwesomeWork = () => {
   return (
-    <div className="bg-[#fff] py-24" id="work">
+    <div className="bg-[#dadada] py-24" id="work">
       <div className="text-center pb-8">
         <span className="text-orange-600 font-semibold text-sm">- WORK -</span>
         <h1 className="font-bold text-2xl mt-1">Our Awesome Work</h1>

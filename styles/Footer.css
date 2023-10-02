@@ -3,7 +3,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     max-width: 1200px;
     margin: auto;
-    padding: 170px 15px 50px 15px;
+    padding: 80px 15px 50px 15px;
     place-items: center;
   }
   .footer_div_links_col-2 h3 {
@@ -271,6 +271,9 @@
   }
   
   @media (max-width: 425px) {
+    .footer_links_main {
+      grid-template-columns: 1fr;
+    }
     .footer_banner {
       padding: 46px 20px;
     }

@@ -3,7 +3,7 @@ import React from "react";
 const Ceo = () => {
   return (
     <div className="py-12 px-8" id="ceo">
-      <div className="ceo-main bg-[#D9D7F1] rounded-full h-full py-8 mb-10 max-w-[1100px] m-auto">
+      <div className="ceo-main bg-[#D9D7F1] rounded-full h-full py-8 mb-10 max-w-[1200px] m-auto">
         <div className="ceo-img">
           <div>
             Meat Our <br /> <span>CEO</span>
