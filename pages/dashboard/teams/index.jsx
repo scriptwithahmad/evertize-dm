@@ -35,7 +35,8 @@ const Team = ({ data }) => {
       <Toaster />
       <div className="bg-[#0A121E] h-full py-8 px-8 text-white">
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-          <div class="flex items-center p-8 justify-between pb-4 bg-opacity-20 bg-blue-400 backdrop-filter backdrop-blur-lg backdrop-filter-blur rounded-t-lg shadow-xl border border-opacity-20 border-white">
+          <span className="font-semibold text-2xl">Our Team Members</span>
+          <div class="flex items-center p-8 mt-6 justify-between pb-4 bg-opacity-20 bg-blue-400 backdrop-filter backdrop-blur-lg backdrop-filter-blur rounded-t-lg shadow-xl border border-opacity-20 border-white">
             <div>
               <button
                 id="dropdownActionButton"
@@ -148,7 +149,7 @@ const Team = ({ data }) => {
                       <div class="pl-3">
                         <div class="text-base font-normal">{v.name}</div>
                         <div class="font-light text-[14px] text-gray-500">
-                          {v.email ? "" : "ahmad08@gmail.com"}
+                          {v.email}
                         </div>
                       </div>
                     </th>
@@ -163,7 +164,7 @@ const Team = ({ data }) => {
                       <Link href="/dashboard/teams" class="font-medium text-[#E77918]">
                         <i
                           onClick={() => delTeamMember(v._id)}
-                          class="fa-regular fa-trash-can"
+                          class="fa-regular fa-trash-can mr-2"
                         ></i>
                       </Link>
                       <a href="#" class="font-medium text-[#E77918]">

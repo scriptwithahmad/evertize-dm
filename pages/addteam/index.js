@@ -9,6 +9,7 @@ const Team = () => {
   const [formData, setFormData] = useState({
     name: "",
     design: "",
+    email: "",
   });
   const [loading, setLoading] = useState(false);
 
@@ -43,13 +44,14 @@ const Team = () => {
 
   //   CLOUDINARY
   // SUBMIT FORM ON SUBMIT
-  
+
   const sumbitHandler = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
       const imageUrl = await uploadImageToCloudinary();
-      const res = await axios.post("/api/team", {  // Notice the leading '/'
+      const res = await axios.post("/api/team", {
+        // Notice the leading '/'
         ...formData,
         avatar: imageUrl,
       });
@@ -81,6 +83,9 @@ const Team = () => {
         <Toaster />
         <div className="main">
           <form className="formMain teamMain" onSubmit={sumbitHandler}>
+            <span className="font-semibold text-2xl text-white pb-3 mb-4 border-b border-gray-600">
+              Add New Service
+            </span>
             {/* Name ---------*/}
             <label htmlFor="name"> Name </label>
             <input
@@ -97,6 +102,16 @@ const Team = () => {
               name="design"
               id="design"
               value={formData.design}
+              onChange={formDataChangeHandler}
+              placeholder="Enter your Designation..."
+            />
+            {/* Email ---------*/}
+            <label htmlFor="email"> Email </label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value={formData.email}
               onChange={formDataChangeHandler}
               placeholder="Enter your Designation..."
             />
@@ -120,6 +135,7 @@ const Team = () => {
             ) : (
               <>
                 <input
+                  className="mt-2"
                   type="file"
                   name="avatar"
                   id="avatar"

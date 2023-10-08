@@ -8,7 +8,7 @@ import { Toaster, toast } from "react-hot-toast";
 import dynamic from "next/dynamic";
 const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
-const Experience = () => {
+const updateService = () => {
   const editor = useRef(null);
   const router = useRouter();
   const slug = router.query.slug;
@@ -192,4 +192,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default updateService;

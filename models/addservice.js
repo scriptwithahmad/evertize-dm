@@ -24,6 +24,11 @@ const addServiceModel = new mongoose.Schema(
       trim: true,
       required: [true, "Image is Required"],
     },
+    cate: {
+      type: String,
+      trim: true,
+      required: [true, "Category is Required"],
+    },
     author: {
       type: String,
       trim: true,

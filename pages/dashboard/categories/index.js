@@ -26,7 +26,7 @@ const category = () => {
       await axios.post(`/api/newcategory/addnewcategory`, { category });
       toast.success("Category Added Successfully!");
       setLoadAgain(!loadAgain);
-      setCategory("")
+      setCategory("");
     } catch (error) {
       console.log(error);
       setError(error.response?.data?.message);
@@ -57,24 +57,28 @@ const category = () => {
           <div className="dashboardHeading">
             Add Your Services <span>Categories</span>
           </div>
-          <input
-            onChange={(e) => {
-              setCategory(e.target.value);
-              setError("");
-            }}
-            value={category}
-            required
-            type="text"
-            placeholder="Category Name"
-          />
-          <button
-            disabled={loading}
-            className="bg-blue-600 text-white p-1 px-4 rounded-md hover:bg-blue-700"
-          >
-            {" "}
-            {loading && <i className="bx bx-loader"></i>}
-            <span>Add</span>
-          </button>
+
+          <div className="flex items-center gap-3 max-w-[50%] py-2">
+            <input
+              onChange={(e) => {
+                setCategory(e.target.value);
+                setError("");
+              }}
+              value={category}
+              required
+              type="text"
+              placeholder="Category Name"
+            />
+            <button
+              disabled={loading}
+              className="bg-blue-600 text-white p-2 px-6 rounded-md hover:bg-blue-700"
+            >
+              {" "}
+              {loading && <i className="bx bx-loader"></i>}
+              <span>Add</span>
+            </button>
+          </div>
+
           <p className="errorPara">{error}</p>
         </form>
 

@@ -1,16 +1,14 @@
 .DashboardCourses {
-    padding: 20px;
-    background: linear-gradient(90deg, #fafafa 20px, transparent 1%) center,linear-gradient(#fafafa 20px, transparent 1%) center,#c7c4c4;
-    background-size: 22px 22px;
-    min-height: 100vh;
+  padding: 20px;
+  background-color: #0a121e;
+  min-height: 100vh;
 }
 
-.DashboardCourses input{
-    display: block;
-    width: 100%;
-    margin:10px 0px;
+.DashboardCourses input {
+  display: block;
+  width: 100%;
+  margin: 10px 0px;
 }
-
 
 .DashboardCoursesWrapper {
   border: 2px solid #dcdcdc;
@@ -18,62 +16,68 @@
   max-width: 1200px;
   margin: 50px auto;
   padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(53, 53, 54, 0.37);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.DashboardCoursesWrapper .inputSection {
+  display: flex;
+  margin: 25px 0px 40px 0px;
+  overflow: hidden;
+  border: 1px solid #c6bcfc;
   border-radius: 0.3rem;
-  background-color: #fff;
+  /* box-shadow: 0 10px 25px rgba(10,10,51,.04); */
+  transition: 0.2s;
+  color: #292d34;
+  font-size: 16px;
 }
 
-
-.DashboardCoursesWrapper .inputSection{
-    display: flex;
-    margin:25px 0px 40px 0px;
-    overflow: hidden;
-    border: 1px solid #c6bcfc;
-    border-radius: 0.3rem;
-    /* box-shadow: 0 10px 25px rgba(10,10,51,.04); */
-    transition: .2s;
-    color: #292d34;
-    font-size: 16px;
+.DashboardCoursesWrapper form {
+  margin-bottom: 15px;
 }
 
-.DashboardCoursesWrapper form{
-    margin-bottom: 15px;
+.DashboardCoursesWrapper input {
+  background-color: #dcdcdc0e;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #333;
+  font-size: 14px;
+  transition: .3s ease-in-out;
+  border: 1px solid #ffffff1a;
+}
+.DashboardCourses input:focus{
+    color: #0077ffd8;
+    border: 1px solid #0077ffd8;
 }
 
-.DashboardCoursesWrapper input{
-    padding:7px 10px;
-    border-radius: .25rem;
-    border: 1px solid rgba(0, 0, 0, 10%);
+.DashboardCoursesWrapper input:focus {
+  outline: none;
 }
 
-.DashboardCoursesWrapper  input:focus{
-    outline:none;
+.dashboardHeading {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffffaf;
+
+  & span {
+    color: #0077ffd8;
+    font-weight: 800;
+  }
 }
 
-.dashboardHeading{
-    font-size: 28px;
-    font-weight: 600;
-    color: #444;
-
-    & span{
-        color: #0077ff;
-        font-weight: 600;
-    }
+.DashboardCoursesWrapper .allcourses .eachCategory {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 5%);
+  padding: 5px 0px;
+  align-items: center;
+  color: #ffffff9c;
 }
 
-.DashboardCoursesWrapper .allcourses .eachCategory{
-    display: flex;
-    border-bottom: 1px solid rgba(0, 0, 0, 5%);
-    padding:5px 0px;
-    align-items: center;
-}
-
-.DashboardCoursesWrapper .allcourses .eachCategory h3{
-    flex-grow: 1;
-    margin-bottom: 0;
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.DashboardCoursesWrapper .allcourses .eachCategory h3:hover{
-    color:#000;
+.DashboardCoursesWrapper .allcourses .eachCategory h3 {
+  flex-grow: 1;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 400;
 }

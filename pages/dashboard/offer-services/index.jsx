@@ -104,6 +104,14 @@ export default function Services({ data }) {
                         </div>
                         <div className="flex gap-2 whitespace-nowrap text-[13px]">
                           <span className="text-[#eeeeeea4] font-light">
+                            Service Category :{" "}
+                          </span>
+                          <h3 className="text-[#eeeeee85] font-medium">
+                            {v.cate}
+                          </h3>
+                        </div>
+                        <div className="flex gap-2 whitespace-nowrap text-[13px]">
+                          <span className="text-[#eeeeeea4] font-light">
                             Uploaded Time :{" "}
                           </span>
                           <h3 className="text-[#eeeeee85] font-medium">

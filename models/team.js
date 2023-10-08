@@ -12,6 +12,11 @@ const teamModel = new mongoose.Schema(
       trim: true,
       required: [true, "Designation is Required"],
     },
+    email: {
+      type: String,
+      trim: true,
+      required: [true, "Email is Required"],
+    },
     avatar: {
       type: String,
       trim: true,

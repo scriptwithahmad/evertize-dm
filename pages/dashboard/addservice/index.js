@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
 import { Toaster, toast } from "react-hot-toast";
@@ -8,29 +8,21 @@ import { Toaster, toast } from "react-hot-toast";
 import dynamic from "next/dynamic";
 const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
-const updateService = () => {
+const updateService = ({ data }) => {
+  const cateData = data.getcat;
   const editor = useRef(null);
   const router = useRouter();
   const [formData, setFormData] = useState({
     title: "",
     desc: "",
     author: "",
+    cate: "",
   });
   const [loading, setLoading] = useState(false);
 
   const formDataChangeHandler = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
-  // const [category, serCategory] = useState("")
-  // const fetchcourses = async () => {
-  //   const { data } = await axios.get("/api/newcategory");
-  //   setCategory(data.getcat);
-  // };
-
-  // useEffect(() => {
-  //   fetchcourses();
-  // }, []);
 
   //   CLOUDINARY
   const [tempImage, setTempImage] = useState("");
@@ -94,7 +86,8 @@ const updateService = () => {
         <form
           className="flex flex-col gap-5 rounded-lg max-w-[600px] m-auto p-6 bg-[#262F3D]"
           onSubmit={sumbitHandler}
-        >
+          >
+          <span className="font-semibold text-2xl text-white pb-3 border-b border-gray-600">Add New Service</span>
           <div className="grid gap-2">
             {/* Title ---------*/}
             {/* <div className="flex flex-col gap-2"> */}
@@ -125,6 +118,23 @@ const updateService = () => {
               placeholder="Enter author name..."
               onChange={formDataChangeHandler}
             />
+
+            {/* Category =================== */}
+            <label className="text-gray-100" htmlFor="cate">
+              Category{" "}
+            </label>
+            <select
+              id="country"
+              name="cate"
+              value={formData.cate}
+              className="p-2 bg-opacity-75 text-[#dadada7a] text-sm focus:text-white bg-black border border-black border-opacity-20 rounded-lg outline-none"
+              onChange={formDataChangeHandler}
+            >
+              <option selected>select one</option>
+              {cateData.map((item) => (
+                <option key={item._id}>{item.category}</option>
+              ))}
+            </select>
           </div>
           {/* </div> */}
 
@@ -200,3 +210,10 @@ const updateService = () => {
 };
 
 export default updateService;
+
+export async function getServerSideProps() {
+  const res = await fetch("https://evertize.vercel.app/api/newcategory");
+  const data = await res.json();
+
+  return { props: { data } };
+}
