@@ -41,7 +41,7 @@ const Footer = () => {
                 <Link href={"/"}>Partners</Link>
                 <Link href="#features">Features</Link>
                 <Link href="#work">Our Work History</Link>
-                <Link href="#ceo">CEO Missin</Link>
+                <Link href="#ceo">CEO Mission</Link>
                 <Link href={"/"}>Contact us</Link>
               </ul>
             </div>
@@ -55,7 +55,7 @@ const Footer = () => {
                 </div>
                 <div className="Links_location_tags">
                   <p>Phone No</p>
-                  <Link href={"/"}>+92 300 7797895</Link>
+                  <Link href={"/"}>+92 300 7791895</Link>
                 </div>
                 <div className="Links_location_tags">
                   <p>Email:</p>

@@ -5,17 +5,18 @@ import "@/styles/Topbar.css";
 import "@/styles/AwesomeWork.css";
 import "@/styles/Loader.css";
 import "@/styles/Footer.css";
-import "@/styles/Team.css"; 
-import "@/styles/dashboard.css"; 
-import "@/styles/createTeam.css"; 
-import "@/styles/aside.css"; 
-import "@/styles/singleService.css"; 
+import "@/styles/Team.css";
+import "@/styles/dashboard.css";
+import "@/styles/createTeam.css";
+import "@/styles/aside.css";
+import "@/styles/category.css";
+import "@/styles/singleService.css";
 import Layout from "@/components/Layout";
 import Loader from "@/components/Loader";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
-
+import { ApiDataProvider } from "@/ApiDataContext";
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
 
@@ -29,23 +30,25 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={router.route}
-          className="slide-in"
-          transition={{
-            duration: 0.7,
-          }}
-          initial={{
-            scaleX: 1,
-          }}
-          animate={{
-            scaleX: 0,
-          }}
-          exit={{ scaleX: 1 }}
-        ></motion.div>
-        <Layout>{loading ? <Loader /> : <Component {...pageProps} />}</Layout>
-      </AnimatePresence>
+      <ApiDataProvider>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={router.route}
+            className="slide-in"
+            transition={{
+              duration: 0.7,
+            }}
+            initial={{
+              scaleX: 1,
+            }}
+            animate={{
+              scaleX: 0,
+            }}
+            exit={{ scaleX: 1 }}
+          ></motion.div>
+          <Layout>{loading ? <Loader /> : <Component {...pageProps} />}</Layout>
+        </AnimatePresence>
+      </ApiDataProvider>
     </>
   );
 }

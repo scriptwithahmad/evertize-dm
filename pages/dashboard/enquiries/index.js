@@ -4,11 +4,11 @@ import Image from "next/image";
 const Enquiries = ({data}) => {
   return (
     <>
-      <div class="backCover">
+      <div class="backCover bg-[url('https://img.freepik.com/free-vector/halftone-background-with-circles_23-2148907689.jpg?size=626&ext=jpg&ga=GA1.1.1572214017.1676789510&semt=sph')]">
         <div className="dash-wrapper">
           <div className="filterBox">
             <h1 className="mainTitle">
-              Services that you offered
+              Client Queries
             </h1>
             <div className="innerInput">
               <input

@@ -1,0 +1,79 @@
+.DashboardCourses {
+    padding: 20px;
+    background: linear-gradient(90deg, #fafafa 20px, transparent 1%) center,linear-gradient(#fafafa 20px, transparent 1%) center,#c7c4c4;
+    background-size: 22px 22px;
+    min-height: 100vh;
+}
+
+.DashboardCourses input{
+    display: block;
+    width: 100%;
+    margin:10px 0px;
+}
+
+
+.DashboardCoursesWrapper {
+  border: 2px solid #dcdcdc;
+  box-shadow: 0 0 20px 0 rgba(28, 9, 80, 0.15);
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+  border-radius: 0.3rem;
+  background-color: #fff;
+}
+
+
+.DashboardCoursesWrapper .inputSection{
+    display: flex;
+    margin:25px 0px 40px 0px;
+    overflow: hidden;
+    border: 1px solid #c6bcfc;
+    border-radius: 0.3rem;
+    /* box-shadow: 0 10px 25px rgba(10,10,51,.04); */
+    transition: .2s;
+    color: #292d34;
+    font-size: 16px;
+}
+
+.DashboardCoursesWrapper form{
+    margin-bottom: 15px;
+}
+
+.DashboardCoursesWrapper input{
+    padding:7px 10px;
+    border-radius: .25rem;
+    border: 1px solid rgba(0, 0, 0, 10%);
+}
+
+.DashboardCoursesWrapper  input:focus{
+    outline:none;
+}
+
+.dashboardHeading{
+    font-size: 28px;
+    font-weight: 600;
+    color: #444;
+
+    & span{
+        color: #0077ff;
+        font-weight: 600;
+    }
+}
+
+.DashboardCoursesWrapper .allcourses .eachCategory{
+    display: flex;
+    border-bottom: 1px solid rgba(0, 0, 0, 5%);
+    padding:5px 0px;
+    align-items: center;
+}
+
+.DashboardCoursesWrapper .allcourses .eachCategory h3{
+    flex-grow: 1;
+    margin-bottom: 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.DashboardCoursesWrapper .allcourses .eachCategory h3:hover{
+    color:#000;
+}

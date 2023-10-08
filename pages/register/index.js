@@ -63,7 +63,7 @@ const index = () => {
       });
       setTimeout(() => {
         router.push("/login");
-      }, 1000);
+      }, 2000);
     } catch (error) {
       console.log(error);
       if (error?.response?.data?.message) {

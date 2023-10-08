@@ -66,6 +66,11 @@ const Aside = () => {
       lable: "Enquiries",
       icon: "fa-solid fa-table-list",
     },
+    {
+      href: "/dashboard/categories",
+      lable: "Category",
+      icon: "fa-solid fa-table-list",
+    },
     // { href: "/dashboard/teams", lable: "Teams", icon: "fa-solid fa-users" },
   ];
 

@@ -16,6 +16,7 @@ const Layout = ({ children }) => {
     "/dashboard/offer-services",
     "/dashboard/teams",
     "/dashboard/addservice",
+    "/dashboard/categories",
   ];
 
   return (

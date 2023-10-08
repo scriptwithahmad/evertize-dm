@@ -1,8 +1,6 @@
-import React from "react";
-
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Link from "next/link";
-
+import { ApiDataContext } from "@/ApiDataContext";
 import OutsideClickHandler from "react-outside-click-handler";
 
 import { useRouter } from "next/router";
@@ -48,8 +46,10 @@ const destination = [
 ];
 
 const Navbar = () => {
-  const Router = useRouter();
+  const Router = useRouter(); 
   const [isOpen, setIsOpen] = useState(false);
+  const { apiData } = useContext(ApiDataContext);
+  console.log(apiData)
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);

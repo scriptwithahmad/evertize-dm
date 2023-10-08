@@ -22,6 +22,16 @@ const updateService = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // const [category, serCategory] = useState("")
+  // const fetchcourses = async () => {
+  //   const { data } = await axios.get("/api/newcategory");
+  //   setCategory(data.getcat);
+  // };
+
+  // useEffect(() => {
+  //   fetchcourses();
+  // }, []);
+
   //   CLOUDINARY
   const [tempImage, setTempImage] = useState("");
 

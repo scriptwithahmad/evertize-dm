@@ -5,6 +5,7 @@ import Link from "next/link";
 
 const Team = ({ data }) => {
   const router = useRouter();
+  console.log(data.teamData)
 
   const delTeamMember = async (id) => {
     try {

@@ -5,21 +5,35 @@ import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
 
 const Login = () => {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
+  const [isValidEmail, setIsValidEmail] = useState(true);
+  const [isValidPassword, setIsValidPassword] = useState(true);
+
   const formDataChangeHandler = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const inputValue = e.target.value;
+    setFormData({ ...formData, [e.target.name]: inputValue });
+
+    if (e.target.name === "email") {
+      setIsValidEmail(inputValue !== "");
+    }
+
+    if (e.target.name === "password") {
+      setIsValidPassword(inputValue !== "");
+    }
+
   };
+
 
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      setLoading(true)
+      setLoading(true);
       const res = await axios.post("/api/login/", {
         ...formData,
       });
@@ -30,16 +44,18 @@ const Login = () => {
       });
       setTimeout(() => {
         router.push("/");
-      }, 1000);
+      }, 2000);
     } catch (error) {
       console.log(error);
       if (error?.response?.data?.message) {
         toast.error(error.response.data.message);
       }
-    } finally{
-      setLoading(false)
+    } finally {
+      setLoading(false);
     }
   };
+
+
 
   return (
     <>
@@ -66,14 +82,16 @@ const Login = () => {
                 <div class="relative mb-6" data-te-input-wrapper-init>
                   <input
                     type="email"
-                    class="peer p-3 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block min-h-full w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 focus:border-blue-600"
+                    className={`peer p-3 border ${
+                      isValidEmail ? "border-gray-300" : "border-red-500"
+                    } text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block min-h-full w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none0 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 focus:border-orange-600`}
                     id="exampleFormControlInput22"
                     onChange={formDataChangeHandler}
                     name="email"
                   />
                   <label
                     for="exampleFormControlInput22"
-                    class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:text-blue-500 peer-focus:bg-gray-50 peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                    class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:text-orange-600 peer-focus:bg-gray-50 peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
                   >
                     Email
                   </label>
@@ -82,20 +100,24 @@ const Login = () => {
                 <div class="relative mb-6" data-te-input-wrapper-init>
                   <input
                     type="password"
-                    class="peer p-3 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block min-h-full w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 focus:border-blue-600"
+                    className={`peer p-3 border ${
+                      isValidPassword ? "border-gray-300" : "border-red-600"
+                    } text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block min-h-full w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 focus:border-orange-400`}
                     id="exampleFormControlInput22"
                     onChange={formDataChangeHandler}
                     name="password"
                   />
+
                   <label
                     for="exampleFormControlInput22"
-                    class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:text-blue-500 peer-focus:bg-gray-50 peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
+                    class="pointer-events-none absolute left-3 top-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:text-orange-500 peer-focus:bg-white peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
                   >
                     Password
                   </label>
                 </div>
                 {/* New Account ----------------------*/}
                 <div>
+                  {/* gpt  ---------*/}
                   <button
                     type="submit"
                     class="w-full mb-3 text-white bg-[#E77818] transition-colors hover:bg-[#fa7f13] focus:focus:ring-4 ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
