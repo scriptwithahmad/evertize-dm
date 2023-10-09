@@ -60,8 +60,9 @@ export default async function Handler(req, res) {
     var user = {
       id: foundUser._id,
       email: foundUser.email,
-      userName: foundUser.userName,
+      name: foundUser.fullName,
       isAdmin: foundUser.isAdmin,
+      userName: foundUser.userName,
     };
 
 

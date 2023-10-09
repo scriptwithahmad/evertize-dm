@@ -6,6 +6,7 @@ import { Toaster, toast } from "react-hot-toast";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState("");
   const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
@@ -26,25 +27,44 @@ const Login = () => {
     if (e.target.name === "password") {
       setIsValidPassword(inputValue !== "");
     }
-
   };
-
 
   const submitHandler = async (e) => {
     e.preventDefault();
+
     try {
       setLoading(true);
-      const res = await axios.post("/api/login/", {
-        ...formData,
+
+      const response = await fetch("/api/login/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-      toast.success("Login Successfully!");
-      setFormData({
-        email: "",
-        password: "",
-      });
-      setTimeout(() => {
+
+      const data = await response.json();
+
+      if (response.ok) {
+        toast.success("Login Successfully!");
+
+        // Assuming 'data' contains user information
+        const user = data.user;
+
+        // Store user data in state, context, or localStorage
+        setUser(user);
+        console.log(user)
+
+        setFormData({
+          email: "",
+          password: "",
+        });
+
+        // Redirect to home page after successful login
         router.push("/");
-      }, 2000);
+      } else {
+        toast.error(data.message);
+      }
     } catch (error) {
       console.log(error);
       if (error?.response?.data?.message) {
@@ -54,8 +74,6 @@ const Login = () => {
       setLoading(false);
     }
   };
-
-
 
   return (
     <>

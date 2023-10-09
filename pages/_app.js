@@ -17,8 +17,11 @@ import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { ApiDataProvider } from "@/ApiDataContext";
+
+
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
+
 
   useEffect(() => {
     setTimeout(() => {

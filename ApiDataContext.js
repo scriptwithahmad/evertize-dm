@@ -8,7 +8,7 @@ const ApiDataProvider = ({ children }) => {
 
   useEffect(() => {
     // Fetch data from your API
-    fetch('http://localhost:3000/api/login')
+    fetch('http://localhost:3000/api/register')
       .then(response => response.json())
       .then(data => setApiData(data))
       .catch(error => console.error('Error fetching API data:', error));

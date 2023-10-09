@@ -3,7 +3,7 @@ import { jwtVerify, SignJWT } from "jose";
 async function GenAccessToken(data) {
   var token = await new SignJWT(data)
     .setProtectedHeader({ alg: "HS256" })
-    .setExpirationTime("1d")
+    .setExpirationTime("7d")
     .setIssuedAt()
     .sign(new TextEncoder().encode(process.env.AUTH_SECRET));
 
@@ -17,7 +17,6 @@ async function JWTVerify(token) {
       token,
       new TextEncoder().encode(process.env.AUTH_SECRET)
       );
-      // console.log(payload?.isAdmin)
     return payload;
   } catch (error) {
     return false;

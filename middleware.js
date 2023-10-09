@@ -6,6 +6,7 @@ export async function middleware(req, res) {
     req.cookies.get("AccessToken")?.value &&
     (await JWTVerify(req.cookies.get("AccessToken")?.value));
 
+
   var pathname = req.nextUrl.pathname;
   var publicRoutes = ["/", "/login", "/register"];
 
@@ -17,13 +18,6 @@ export async function middleware(req, res) {
     return NextResponse.redirect(new URL("/", req.url));
   }
 
-  if (AccessToken?.isAdmin === false) {
-    console.log("Normal User");
-  }
-
-  if (AccessToken?.isAdmin === true) {
-    console.log("Admin User");
-  }
 }
 
 export const config = {
