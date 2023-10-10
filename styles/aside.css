@@ -20,10 +20,10 @@
 
 @media screen and (max-width: 425px) {
     .asideMain{
-        width: 80px;
+        width: 120px;
     }
     .asideMain{
-        padding: 0px;
+        padding: 4px;
     }
     .asideLogo{
         margin-top: 12px;
@@ -32,15 +32,15 @@
     .asideImg{
         width: 65px;
     }
-    #links{
+    /* #links{
         display: none;
-    }
+    } */
     #asideIcons{
         font-size: 18px;
-        margin-left: 10px;
+        /* margin-left: 10px; */
     }
     #sIcon{
         font-size: 18px;
-        margin-left: 10px;
+        /* margin-left: 10px; */
     }
 }

@@ -76,8 +76,9 @@ const Aside = () => {
 
   return (
     <aside
-      className={`asideMain bg-[#010021] space-y-8 hover:bg-[#010021fb] max-w-full min-w-[60px]`}
-    >
+      className={`asideMain bg-[#010021] relative space-y-8 hover:bg-[#010021fb] max-w-full min-w-[60px]`}
+      >
+      <div className="text-white absolute top-[20px] left-1/2">he</div>
       <div className="flex flex-col h-full">
         <div className="asideLogo h-32 w-full flex items-center px-8">
           <Link href="/" className="flex-none">
