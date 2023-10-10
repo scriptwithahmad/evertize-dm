@@ -29,34 +29,37 @@ const Login = () => {
     }
   };
 
-
   const submitHandler = async (e) => {
     e.preventDefault();
-  
+
     try {
       setLoading(true);
-  
-      const response = await axios.post("/api/login", formData, {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-  
+
+      const response = await axios.post(
+        "https://evertize.vercel.app/api/login/",
+        formData,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
       if (response.data.success) {
         toast.success("Login Successfully!");
-  
+
         // Assuming 'data' contains user information
         const user = response.data.user;
-  
+
         // Store user data in state, context, or localStorage
         setUser(user);
         console.log(user);
-  
+
         setFormData({
           email: "",
           password: "",
         });
-  
+
         // Redirect to home page after successful login
         router.push("/");
       } else {
@@ -64,60 +67,13 @@ const Login = () => {
       }
     } catch (error) {
       console.log(error);
-      if (error.response && error.response.data && error.response.data.message) {
+      if (error?.response?.data?.message) {
         toast.error(error.response.data.message);
       }
     } finally {
       setLoading(false);
     }
   };
-  
-
-  // const submitHandler = async (e) => {
-  //   e.preventDefault();
-
-  //   try {
-  //     setLoading(true);
-
-  //     const response = await fetch("/api/login/", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(formData),
-  //     });
-
-  //     const data = await response.json();
-
-  //     if (response.ok) {
-  //       toast.success("Login Successfully!");
-
-  //       // Assuming 'data' contains user information
-  //       const user = data.user;
-
-  //       // Store user data in state, context, or localStorage
-  //       setUser(user);
-  //       console.log(user)
-
-  //       setFormData({
-  //         email: "",
-  //         password: "",
-  //       });
-
-  //       // Redirect to home page after successful login
-  //       router.push("/");
-  //     } else {
-  //       toast.error(data.message);
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //     if (error?.response?.data?.message) {
-  //       toast.error(error.response.data.message);
-  //     }
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
 
   return (
     <>
