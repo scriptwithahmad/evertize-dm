@@ -1,27 +1,28 @@
+.toggleBtn{
+    z-index: 999;
+    position: absolute;
+    bottom: 4%;
+    left: 2%;
+    cursor: pointer;
+    display: none;
+}
+    
+.toggleBtn:active{
+    color: #0800ff;
+    transform: scale(0.9);
+}
+
 @media screen and (max-width: 768px) {
-    .asideMain{
-        width: 100px;
-    }
-    .asideLogo{
-        padding: 0;
-    }
-    .asideImg{
-        width: 90px;
-        margin: 10px;
-    }
-    .asideLinks{
-        padding: 0;
-        font-size: 12px;
-    }
-    #asideIcons{
-        font-size: 12px;
-    }
+  .toggleBtn{
+    display: block;
+    background-color: lightcyan;
+    color: #050424;
+    padding: 2px 12px;
+    border-radius: 4px;
+  }
 }
 
 @media screen and (max-width: 425px) {
-    .asideMain{
-        width: 120px;
-    }
     .asideMain{
         padding: 4px;
     }
