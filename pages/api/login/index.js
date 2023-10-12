@@ -46,13 +46,13 @@ export default async function Handler(req, res) {
       id: foundUser._id,
       userName: foundUser.userName,
       isAdmin: foundUser.isAdmin,
+      image: foundUser.avatar,
     });
 
     res.setHeader(
       "Set-Cookie",
       serialize("AccessToken", AccessToken, {
         path: "/",
-        httpOnly: true,
         secure: true,
       })
     );
@@ -63,8 +63,8 @@ export default async function Handler(req, res) {
       name: foundUser.fullName,
       isAdmin: foundUser.isAdmin,
       userName: foundUser.userName,
+      image: foundUser.avatar,
     };
-
 
     res.json({
       user,

@@ -3,10 +3,11 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
+import { useUser } from "@/UserContext";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
-  const [user, setUser] = useState("");
+  const { setUser } = useUser();
   const router = useRouter();
   const [formData, setFormData] = useState({
     email: "",
@@ -35,25 +36,20 @@ const Login = () => {
     try {
       setLoading(true);
 
-      const response = await axios.post(
-        "https://evertize.vercel.app/api/login/",
-        formData,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await axios.post("/api/login/", formData, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
       if (response.data.success) {
         toast.success("Login Successfully!");
 
-        // Assuming 'data' contains user information
         const user = response.data.user;
-
-        // Store user data in state, context, or localStorage
         setUser(user);
-        console.log(user);
+
+        // Store user data in localStorage
+        localStorage.setItem("user", JSON.stringify(user));
 
         setFormData({
           email: "",
@@ -61,7 +57,7 @@ const Login = () => {
         });
 
         // Redirect to home page after successful login
-        router.push("/");
+        // router.push("/");
       } else {
         toast.error(response.data.message);
       }

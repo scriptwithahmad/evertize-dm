@@ -16,12 +16,11 @@ import Loader from "@/components/Loader";
 import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
-import { ApiDataProvider } from "@/ApiDataContext";
+import { UserProvider } from "@/UserContext";
 
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(true);
-
 
   useEffect(() => {
     setTimeout(() => {
@@ -33,7 +32,7 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <ApiDataProvider>
+      <UserProvider>
         <AnimatePresence mode="wait">
           <motion.div
             key={router.route}
@@ -51,7 +50,7 @@ export default function App({ Component, pageProps }) {
           ></motion.div>
           <Layout>{loading ? <Loader /> : <Component {...pageProps} />}</Layout>
         </AnimatePresence>
-      </ApiDataProvider>
+      </UserProvider>
     </>
   );
 }
