@@ -69,7 +69,10 @@ const updateService = () => {
         ...formData,
         avatar: imageUrl,
       });
-      router.push("/dashboard/offer-services");
+      toast.success("Service Updated 😍");
+      setTimeout(() => {
+        router.push("/dashboard/offer-services");
+      }, 2000);
     } catch (error) {
       if (error?.response?.data?.message) {
         toast.error(error.response.data.message);
