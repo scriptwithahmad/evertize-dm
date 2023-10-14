@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
-// import { useSession } from 'next-auth/react'
 
 const category = () => {
   const [error, setError] = useState("");
@@ -51,7 +50,6 @@ const category = () => {
   return (
     <div className="DashboardCourses">
       <Toaster />
-      {/* <Toaster position="bottom-right" /> */}
       <div className="DashboardCoursesWrapper">
         <form onSubmit={addCourse}>
           <div className="dashboardHeading">
@@ -95,7 +93,7 @@ const category = () => {
                           "Are you sure to delete this Category?"
                         ) && deleteCategory(v._id);
                       }}
-                      className="fa-solid fa-trash-can text-red-600 cursor-pointer hover:text-red-700"
+                      className="fa-solid fa-trash text-red-600 cursor-pointer hover:text-red-700"
                     ></i>
                   }
                 </div>

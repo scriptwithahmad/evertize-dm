@@ -84,7 +84,7 @@ export default function Services({ data }) {
                       />
                     </div>
                     <div className="das-info">
-                      <h1 className="title line-clamp-2"> {v.title} </h1>
+                      <h1 className="title line-clamp-1"> {v.title} </h1>
                       <p className="text-[#eeeeee9a] text-[13px] leading-tight line-clamp-3">
                         {edit && (
                           <div

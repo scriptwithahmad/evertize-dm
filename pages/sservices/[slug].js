@@ -22,7 +22,7 @@ const singleService = ({ data }) => {
           />
           <div className="imgSideBarDetail">
             <h2>Service Details</h2>
-            <div className="flex">
+            <div className="flex_layout">
               <div className="child">
                 <h3>Date</h3>
                 <span>
@@ -31,7 +31,7 @@ const singleService = ({ data }) => {
               </div>
               <div className="child">
                 <h3>Category</h3>
-                <span> Category </span>
+                <span> {data.singleService.cate} </span>
               </div>
               <div className="child">
                 <h3>Author Name</h3>
@@ -42,9 +42,9 @@ const singleService = ({ data }) => {
           <div className="subTitle">
             <h1>Description</h1>
             {edit && (
-              <div
+              <p
                 dangerouslySetInnerHTML={createMarkup(data.singleService.desc)}
-              ></div>
+              ></p>
             )}
           </div>
         </div>

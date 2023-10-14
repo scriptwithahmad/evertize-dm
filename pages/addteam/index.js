@@ -65,7 +65,7 @@ const Team = () => {
       });
       setTimeout(() => {
         router.push("/team");
-      }, 2000);
+      }, 1000);
       setTempImage("");
     } catch (error) {
       if (error?.response?.data?.message) {

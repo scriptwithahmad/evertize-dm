@@ -4,9 +4,40 @@ import { useState, useEffect, useContext } from "react";
 import OutsideClickHandler from "react-outside-click-handler";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 
-const destination = [
+const NavLinks = [
+  {
+    name: "Home",
+    link: "/",
+  },
+
+  {
+    name: "About",
+    link: "/about",
+  },
+
+  {
+    name: "Services",
+    link: "/myservices",
+  },
+
+  {
+    name: "Team",
+    link: "/team",
+  },
+
+  {
+    name: "Testimonials",
+    link: "/testimonials",
+  },
+
+  {
+    name: "Contact",
+    link: "/contact",
+  }
+];
+const ContectLinks = [
   {
     name: "Home",
     link: "/",
@@ -52,21 +83,17 @@ const Navbar = () => {
   const Router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
-  
-
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
 
-  
   const handleLogout = () => {
-    localStorage.removeItem('user'); // Remove from localStorage
-    const cookie = Cookies.get('AccessToken')
+    localStorage.removeItem("user");
+    const cookie = Cookies.get("AccessToken");
     // console.log(cookie)
-    Cookies.remove('cookie'); 
-    logout(); 
+    Cookies.remove("cookie");
+    logout();
   };
-
 
   useEffect(() => {
     if (isOpen) {
@@ -85,22 +112,38 @@ const Navbar = () => {
           </div>
 
           <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-            {destination?.map((v, i) => (
-              <li>
-                <Link
-                  className={Router.pathname === v.link ? "active" : ""}
-                  style={{
-                    color: Router.pathname === v.link ? "#FA7909" : "#dadada",
-                  }}
-                  href={v.link}
-                >
-                  {v.name}
-                </Link>
-              </li>
-            ))}
+            {user
+              ? NavLinks?.map((v, i) => (
+                  <li key={i}>
+                    <Link
+                      className={Router.pathname === v.link ? "active" : ""}
+                      style={{
+                        color:
+                          Router.pathname === v.link ? "#FA7909" : "#dadada",
+                      }}
+                      href={v.link}
+                    >
+                      {v.name}
+                    </Link>
+                  </li>
+                ))
+              : ContectLinks?.map((v, i) => (
+                  <li key={i}>
+                    <Link
+                      className={Router.pathname === v.link ? "active" : ""}
+                      style={{
+                        color:
+                          Router.pathname === v.link ? "#FA7909" : "#dadada",
+                      }}
+                      href={v.link}
+                    >
+                      {v.name}
+                    </Link>
+                  </li>
+                ))}
 
             <li>
-              <Link href={"/"} className="apllyBtnMobileRes">
+              <Link href="/register" className="apllyBtnMobileRes">
                 Contact us
               </Link>
             </li>
@@ -145,7 +188,7 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="applyBtn">
-              <Link href={"/"} className="apllyBtn">
+              <Link href="/register" className="apllyBtn">
                 Contact us
               </Link>
             </div>

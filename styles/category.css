@@ -17,7 +17,7 @@
   margin: 50px auto;
   padding: 30px;
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 32px 0 rgba(53, 53, 54, 0.37);
+  box-shadow: 0 8px 32px 0 rgba(53, 53, 54, 0.1);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -60,7 +60,7 @@
   font-size: 28px;
   font-weight: 600;
   color: #ffffffaf;
-
+  
   & span {
     color: #0077ffd8;
     font-weight: 800;
@@ -69,15 +69,15 @@
 
 .DashboardCoursesWrapper .allcourses .eachCategory {
   display: flex;
-  border-bottom: 1px solid rgba(0, 0, 0, 5%);
-  padding: 5px 0px;
+  border-bottom: 1px solid rgba(161, 161, 161, 0.075);
+  padding: 10px 0px;
   align-items: center;
-  color: #ffffff9c;
+  color: #ffffff8e;
 }
 
 .DashboardCoursesWrapper .allcourses .eachCategory h3 {
   flex-grow: 1;
   margin-bottom: 0;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 300;
 }

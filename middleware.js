@@ -17,6 +17,10 @@ export async function middleware(req, res) {
   if (AccessToken?.isAdmin === false && !publicRoutes.includes(pathname)) {
     return NextResponse.redirect(new URL("/", req.url));
   }
+  var contactPage = ["/login", "/register"];
+  if (AccessToken && contactPage.includes(pathname)) {
+    return NextResponse.redirect(new URL("/", req.url));
+  }
 
 }
 

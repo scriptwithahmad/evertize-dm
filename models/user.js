@@ -22,6 +22,8 @@ const userModel = new mongoose.Schema({
     type: String,
     trim: true,
     required: [true, "Password is Required"],
+    minlength: [5, "Password Must be 5 Character Long"],
+    description: "must be a string at least 8 characters long, and is required",
   },
   avatar: {
     type: String,

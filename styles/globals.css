@@ -168,3 +168,13 @@ input[type="number"]::-webkit-outer-spin-button {
   overflow: hidden;
   z-index: 9999999999999999999999;
 }
+
+
+/* Enquiry */
+
+.enquiry_eye{
+  visibility: hidden;
+}
+.enquiryCard:hover .enquiry_eye{
+  visibility: visible;
+}

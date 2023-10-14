@@ -51,15 +51,19 @@ const Footer = () => {
               <ul>
                 <div className="Links_location_tags">
                   <p>Home Town Address</p>
-                  <Link href={"/"}>Green Town Punjab Faislabad, Pakistan</Link>
+                  <Link href="/">
+                    <address> Green Town Punjab Faislabad, Pakistan </address>
+                  </Link>
                 </div>
                 <div className="Links_location_tags">
                   <p>Phone No</p>
-                  <Link href={"/"}>+92 300 7791895</Link>
+                  <Link href="tel:+923007791895">+92 300 7791895</Link>
                 </div>
                 <div className="Links_location_tags">
                   <p>Email:</p>
-                  <Link href={"/"}>evertize.marketing@gmail.com</Link>
+                  <Link href="mailto:evertize.marketing@gmail.com">
+                    evertize.marketing@gmail.com
+                  </Link>
                 </div>
               </ul>
             </div>

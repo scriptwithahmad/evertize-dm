@@ -66,17 +66,14 @@ export default async function Handler(req, res) {
       image: foundUser.avatar,
     };
 
-    res.json({
+    res.status(201).json({
       user,
       success: true,
     });
 
     // If email and password are valid
 
-    res.status(200).json({
-      success: true,
-      message: "User Login Successful!",
-    });
+  
   } catch (error) {
     console.error(error);
     res.status(500).json({

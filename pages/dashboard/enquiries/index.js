@@ -1,15 +1,23 @@
 import Link from "next/link";
 import Image from "next/image";
+import Model from "@/components/Model";
+import { useState } from "react";
 
-const Enquiries = ({data}) => {
+const Enquiries = ({ data }) => {
+  const [showModel, setShowModel] = useState(false);
+  const [modelData, setModelData] = useState([]);
+
+  const showModelData = (v) => {
+    setShowModel(!showModel);
+    setModelData(v);
+  };
+
   return (
     <>
       <div class="backCover bg-[url('https://img.freepik.com/free-vector/halftone-background-with-circles_23-2148907689.jpg?size=626&ext=jpg&ga=GA1.1.1572214017.1676789510&semt=sph')]">
         <div className="dash-wrapper">
           <div className="filterBox">
-            <h1 className="mainTitle">
-              Client Queries
-            </h1>
+            <h1 className="mainTitle">Client Queries</h1>
             <div className="innerInput">
               <input
                 type="text"
@@ -38,7 +46,7 @@ const Enquiries = ({data}) => {
             {/* {searchError && <p>No matching results found......</p>} */}
             {data?.serviceAll?.map((v, i) => {
               return (
-                <div className="das-col" key={i}>
+                <div className="das-col enquiryCard" key={i}>
                   <div className="das-sub-col">
                     <div className="dasImgMain">
                       <Image
@@ -74,13 +82,22 @@ const Enquiries = ({data}) => {
                             {v.phone}
                           </h3>
                         </div>
-                        <div className="flex gap-2 whitespace-nowrap text-[13px]">
-                          <span className="text-[#eeeeeea4] font-light">
-                            Client Email :{" "}
+                        <div className="flex gap-2 justify-between whitespace-nowrap text-[13px]">
+                          <div className="flex">
+                            <span className="text-[#eeeeeea4] font-light">
+                              Client Email :{" "}
+                            </span>
+                            <h3 className="text-[#eeeeee85] font-medium">
+                              {v.email}
+                            </h3>
+                          </div>
+                          {/* EYE BUTTON  ---------*/}
+                          <span className="enquiry_eye text-gray-400 text-sm cursor-pointer hover:text-white hover:scale-105">
+                            <i
+                              onClick={() => showModelData(v)}
+                              class="fa-regular fa-eye"
+                            ></i>
                           </span>
-                          <h3 className="text-[#eeeeee85] font-medium">
-                            {v.email}
-                          </h3>
                         </div>
                       </div>
                     </div>
@@ -89,19 +106,19 @@ const Enquiries = ({data}) => {
               );
             })}
           </div>
+          {showModel && <Model modelData={modelData} setShowModel={setShowModel} />}
         </div>
       </div>
     </>
   );
-}
+};
 
-export default Enquiries
-
-
-
+export default Enquiries;
 
 export async function getServerSideProps() {
-  const res = await fetch("https://evertize.vercel.app/api/addclientservice/getall");
+  const res = await fetch(
+    "https://evertize.vercel.app/api/addclientservice/getall"
+  );
   const data = await res.json();
 
   return { props: { data } };
