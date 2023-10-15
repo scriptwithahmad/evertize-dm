@@ -30,7 +30,6 @@ const Enquiries = ({ data }) => {
               <button>Search</button>
             </div>
           </div>
-
           {/* ------------------ CATEGORY SECTION START ------------------- */}
           <div className="cate-buttons">
             <button>All</button>
@@ -57,8 +56,8 @@ const Enquiries = ({ data }) => {
                         className="das-img"
                       />
                     </div>
-                    <div className="das-info">
-                      <h1 className="title"> {v.serviceName} </h1>
+                    <div className="das-info cursor-pointer">
+                      <h1 onClick={() => showModelData(v)} className="title"> {v.serviceName} </h1>
                       <p
                         style={{ display: "inline-block" }}
                         className="text-[#eeeeee9a] text-[13px] leading-tight"

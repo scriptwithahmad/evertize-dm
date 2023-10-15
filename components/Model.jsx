@@ -11,7 +11,7 @@ const Model = ({ modelData, setShowModel }) => {
   return (
     <>
       <div
-        className={`h-full w-full overflow-auto rounded-lg text-white bg-[#050c2b] absolute top-0 left-0 p-4 ${
+        className={`h-full w-full overflow-auto rounded-lg text-white bg-[#050c2b] absolute top-[0] left-0 p-4 ${
           isOpen ? "" : "hidden"
         }`}
       >
@@ -21,14 +21,14 @@ const Model = ({ modelData, setShowModel }) => {
         ></i>
         <div className="flex gap-4">
           <img
-            className="w-[450px] h-[400px] rounded-lg sticky left-0 top-0"
+            className="w-[450px] h-[520px] rounded-lg sticky left-0 top-0 bg-blue-950"
             src={modelData.avatar}
             alt="image"
           />
           {/* info  -----*/}
           <div className="px-4 flex flex-col justify-between">
             <div>
-              <h1 className="text-2xl font-semibold font-serif tracking-wider mb-3 text-[#ffffffad]">
+              <h1 className="text-3xl line-clamp-1 font-semibold font-serif tracking-wider mb-3 text-[#ffffffad]">
                 {" "}
                 {modelData.serviceName}{" "}
               </h1>
@@ -39,26 +39,24 @@ const Model = ({ modelData, setShowModel }) => {
             {/* Additional Details  */}
             <div className="grid grid-cols-3 gap-4 mt-6 rounded-lg max-w-full w-fit h-fit">
               <div className="whitespace-nowrap bg-[#00279427] border border-[#8080801f] rounded-lg leading-6 px-3 py-2 text-[13px]">
-                <span className="text-[#eeeeeea4] font-light">
-                  Client Name :{" "}
-                </span>
-                <h3 className="text-[#eeeeee85] font-medium">
+                <span className="text-[#eeeeee73] font-light">Client Name</span>
+                <h3 className="text-[#eeeeee9d] font-medium">
                   {modelData.name}
                 </h3>
               </div>
               <div className="whitespace-nowrap bg-[#00279427] border border-[#8080801f] rounded-lg leading-6 px-3 py-2 text-[13px]">
-                <span className="text-[#eeeeeea4] font-light">
-                  Client Phone :{" "}
+                <span className="text-[#eeeeee73] font-light">
+                  Client Phone
                 </span>
-                <h3 className="text-[#eeeeee85] font-medium">
+                <h3 className="text-[#eeeeee9d] font-medium">
                   {modelData.phone}
                 </h3>
               </div>
               <div className="whitespace-nowrap bg-[#00279427] border border-[#8080801f] rounded-lg leading-6 px-3 py-2 text-[13px]">
-                <span className="text-[#eeeeeea4] font-light">
-                  Client Email :{" "}
+                <span className="text-[#eeeeee73] font-light">
+                  Client Email
                 </span>
-                <h3 className="text-[#eeeeee85] font-medium">
+                <h3 className="text-[#eeeeee9d] font-medium">
                   {modelData.email}
                 </h3>
               </div>
