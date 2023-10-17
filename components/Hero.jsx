@@ -1,41 +1,26 @@
 import React from "react";
 import Lottie from "lottie-react";
-import anime from "@/public/anime.json"
-import fb from "@/public/fb.json"
-import insta from "@/public/insta.json"
+import heroJson from "@/public/hero.json";
 
 const Hero = () => {
   return (
     <div className="bg-[#eee] z-10 relative overflow-hidden">
-      <div className=" max-w-[1200px] m-auto h-full min-h-[100vh] flex items-center justify-center">
-        <div className="w-1/2 ">
-          <h1 className="font-extrabold text-[45px] leading-normal max-w-[80%] bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-transparent bg-clip-text">
+      <div className=" max-w-[1200px] px-2 m-auto mt-20 h-full min-h-[100vh] flex items-center justify-center flex-col lg:flex-row lg:mt-2">
+        <div className="px-4 lg:px-0 lg:w-1/2">
+          <h1 className="font-extrabold text-[23px] my-2 lg:text-[45px] max-w-[100%] leading-normal bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-transparent bg-clip-text lg:max-w-[80%]">
             <span className="font-extrabold text-[#FA7909]"> EVERTIZE </span>
             Your Strategic Partner in Marketing Success
           </h1>
-          <p className="mb-4 leading-[1.4] text-gray-900 max-w-[60%]">
+          <p className="mb-4 leading-[1.4] text-gray-900 text-sm w-full lg:max-w-[60%]">
             We specialize in delivering comprehensive Marketing and Branding
             Solutions tailored to your needs.
           </p>
           <button className="btn"> Contact us </button>
         </div>
-        <div className="relative w-1/2  ">
-          <Lottie  animationData={anime}/>
-          <Lottie className="absolute top-0 left-[15%] w-1/3" animationData={fb}/>
-          <Lottie className="absolute bottom-[20%] -z-30 right-[25%] bordef border-red-600  w-[5vw]" animationData={insta}/>
-
+        <div className="w-full lg:w-1/2">
+          <Lottie animationData={heroJson} />
         </div>
       </div>
-      <img
-        className="hero-svg-1 absolute top-[77%] left-[-6%] h-56 animate-pulse"
-        src="/overlay.png"
-        alt="overlay"
-      />
-      <img
-        className="hero-svg-2 animateElm absolute top-[75%] left-[55%] mix-blend-multiply h-36"
-        src="https://d2pas86kykpvmq.cloudfront.net/landings/squiggel/hero.png"
-        alt=""
-      />
     </div>
   );
 };

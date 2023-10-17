@@ -82,6 +82,9 @@ input[type="number"]::-webkit-outer-spin-button {
       max-width: 70%;
     }
   }
+  .btn{
+    background: #000;
+  }
 }
 @media screen and (max-width: 768px) {
   .heroMain {
@@ -93,6 +96,9 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 @media screen and (max-width: 425px) {
+  .btn{
+    background: #000;
+  }
   .heroMain {
     gap: 30px;
 
