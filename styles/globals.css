@@ -27,7 +27,7 @@ input[type="number"]::-webkit-outer-spin-button {
 .btn {
   position: relative;
   text-decoration: none;
-  padding: 8px 24px;
+  /* padding: 8px 24px; */
   display: inline-block;
   border-radius: 6em;
   transition: all 0.2s;
@@ -41,8 +41,8 @@ input[type="number"]::-webkit-outer-spin-button {
   padding: 8px 18px;
   font-size: 13px;
 }
-.serviceBtn:active{
-  transform: scale(.9);
+.serviceBtn:active {
+  transform: scale(0.9);
 }
 .btn::after {
   content: "";
@@ -82,9 +82,6 @@ input[type="number"]::-webkit-outer-spin-button {
       max-width: 70%;
     }
   }
-  .btn{
-    background: #000;
-  }
 }
 @media screen and (max-width: 768px) {
   .heroMain {
@@ -96,9 +93,6 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 @media screen and (max-width: 425px) {
-  .btn{
-    background: #000;
-  }
   .heroMain {
     gap: 30px;
 
@@ -107,9 +101,6 @@ input[type="number"]::-webkit-outer-spin-button {
     }
     & p {
       font-size: 14px;
-    }
-    .btn {
-      padding: 4px 10px;
     }
   }
 }
@@ -175,12 +166,11 @@ input[type="number"]::-webkit-outer-spin-button {
   z-index: 9999999999999999999999;
 }
 
-
 /* Enquiry */
 
-.enquiry_eye{
+.enquiry_eye {
   visibility: hidden;
 }
-.enquiryCard:hover .enquiry_eye{
+.enquiryCard:hover .enquiry_eye {
   visibility: visible;
 }

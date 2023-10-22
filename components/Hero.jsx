@@ -15,7 +15,7 @@ const Hero = () => {
             We specialize in delivering comprehensive Marketing and Branding
             Solutions tailored to your needs.
           </p>
-          <button className="btn"> Contact us </button>
+          <button className="btn px-3 py-1 lg:px-4 lg:py-2"> Contact us </button>
         </div>
         <div className="w-full lg:w-1/2">
           <Lottie animationData={heroJson} />

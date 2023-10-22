@@ -11,10 +11,6 @@ export const UserProvider = ({ children }) => {
     setUser(null);
     localStorage.removeItem("user");
     Cookies.remove('AccessToken'); 
-    // Assuming you're using cookies, clear the user cookie here
-    // For example, if you're using js-cookie library:
-    // import Cookies from 'js-cookie';
-    // Cookies.remove('userCookieName');
   };
 
   useEffect(() => {
