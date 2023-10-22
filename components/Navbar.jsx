@@ -79,7 +79,7 @@ const ContectLinks = [
 
 const Navbar = () => {
   const { user, logout } = useUser();
-  // console.log(user);
+  // console.log(user)
   const Router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -177,7 +177,7 @@ const Navbar = () => {
                 alt="img here"
               ></Image>
               <div className="text-white capitalize">
-                <h3> {user ? `${user?.name}` : "Plz login."} </h3>
+                <h3> {user?.name} </h3>
                 <span
                   className="text-xs hover:text-[#E77918] transition-all cursor-pointer"
                   onClick={handleLogout}

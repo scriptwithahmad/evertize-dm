@@ -100,66 +100,70 @@ const index = () => {
                 <div class="relative mb-6" data-te-input-wrapper-init>
                   <input
                     type="text"
-                    class="peer p-3 border border-ora text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block min-h-[auto] w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 focus:border-orange-200"
+                    class="p-3 border border-ora text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:text-orange-600 focus:border-primary-600 block min-h-[auto] w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:border-orange-200"
                     id="exampleFormControlInput22"
                     onChange={formDataChangeHandler}
                     name="fullName"
+                    placeholder="Full Name"
                   />
-                  <label
+                  {/* <label
                     for="exampleFormControlInput22"
                     class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:text-orange-400 peer-focus:bg-gray-50 peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                   >
                     Full Name
-                  </label>
+                  </label> */}
                 </div>
                 {/* User Name -------------------------*/}
                 <div class="relative mb-6" data-te-input-wrapper-init>
                   <input
                     type="text"
-                    class="peer p-3 border border-ora text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block min-h-[auto] w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 focus:border-orange-200"
+                     class="p-3 border border-ora text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:text-orange-600 focus:border-primary-600 block min-h-[auto] w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:border-orange-200"
                     id="exampleFormControlInput22"
                     onChange={formDataChangeHandler}
                     name="userName"
+                    placeholder="Username"
                   />
-                  <label
+                  {/* <label
                     for="exampleFormControlInput22"
                     class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:text-orange-400 peer-focus:bg-gray-50 peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                   >
                     Username
-                  </label>
+                  </label> */}
                 </div>
                 {/* Email  ----------------------------*/}
                 <div class="relative mb-6" data-te-input-wrapper-init>
                   <input
                     autoComplete="true"
                     type="email"
-                    class="peer p-3 border border-ora text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block min-h-[auto] w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 focus:border-orange-200"
+                     class="p-3 border border-ora text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:text-orange-600 focus:border-primary-600 block min-h-[auto] w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:border-orange-200"
                     id="exampleFormControlInput22"
                     onChange={formDataChangeHandler}
                     name="email"
+                    placeholder="Email"
                   />
-                  <label
+                  {/* <label
                     for="exampleFormControlInput22"
                     class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:text-orange-400 peer-focus:bg-gray-50 peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                   >
                     Email
-                  </label>
+                  </label> */}
                 </div>
                 {/* Password  ----------------------------*/}
                 <div class="relative mb-6" data-te-input-wrapper-init>
                   <input
                     type="password"
-                    class="peer p-3 border border-ora text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block min-h-[auto] w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 focus:border-orange-200"
+                     class="p-3 border border-ora text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:text-orange-600 focus:border-primary-600 block min-h-[auto] w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:border-orange-200"
                     id="exampleFormControlInput22"
                     onChange={formDataChangeHandler}
                     name="password"
+                    placeholder="Password"
                   />
-                  <label
+                  {/* <label
                     for="exampleFormControlInput22"
                     class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:text-orange-400 peer-focus:bg-gray-50 peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
                   >
                     Password
-                  </label>
+                  </label> */}
                 </div>
                 {/* ------------------ CLOUDINARY ----------------- */}
                 <div>

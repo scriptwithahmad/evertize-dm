@@ -5,14 +5,10 @@ import Footer from "./Footer";
 import { Toaster } from "react-hot-toast";
 import { useRouter } from "next/router";
 import Aside from "./Aside";
-// import Login from "@/pages/login";
 
 
 const Layout = ({ children }) => {
   var { pathname } = useRouter();
-  // const [user, setUser] = useState(null)
-
-  // console.log(user)
 
   var privateRoutes = [
     "/dashboard",

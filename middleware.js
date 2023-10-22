@@ -2,6 +2,8 @@ import { JWTVerify } from "./helpers/jwt";
 import { NextResponse } from "next/server";
 
 export async function middleware(req, res) {
+
+
   var AccessToken =
     req.cookies.get("AccessToken")?.value &&
     (await JWTVerify(req.cookies.get("AccessToken")?.value));

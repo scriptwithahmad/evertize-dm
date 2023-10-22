@@ -75,7 +75,7 @@ const Login = () => {
     <>
       <section class="bg-[#eee]">
         <div class="flex flex-col items-center justify-center px-6 py-2 mx-auto md:h-full md:py-8 lg:py-10">
-          <div class="w-full rounded-lg shadow border my-8 sm:max-w-md xl:p-0 bg-white">
+          <div class="w-full rounded-lg shadow border my-8 mt-24 lg:my-0 lg:mt-14 sm:max-w-md xl:p-0 bg-white">
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
               <Link
                 href="/"
@@ -94,40 +94,42 @@ const Login = () => {
               <form onSubmit={submitHandler} class="space-y-4 md:space-y-6">
                 {/* Email  -------------------------------*/}
                 <div class="relative mb-6" data-te-input-wrapper-init>
+                  {/* <label
+                    for="exampleFormControlInput22"
+                    class="leading-[2.15] mb-1 text-neutral-500 transition-all duration-200 ease-out"
+                  >
+                    Email
+                  </label> */}
                   <input
                     type="email"
-                    className={`peer p-3 border ${
+                    className={`p-3 border ${
                       isValidEmail ? "border-gray-300" : "border-red-500"
-                    } text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block min-h-full w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none0 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 focus:border-orange-600`}
+                    } text-neutral-500 sm:text-sm rounded-lg focus:ring-primary-600 focus:text-orange-600 focus:border-primary-600 block min-h-full w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:border-orange-600`}
                     id="exampleFormControlInput22"
                     onChange={formDataChangeHandler}
                     name="email"
+                    placeholder="Email"
                   />
-                  <label
-                    for="exampleFormControlInput22"
-                    class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:text-orange-600 peer-focus:bg-gray-50 peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
-                  >
-                    Email
-                  </label>
                 </div>
                 {/* Password  ----------------------------*/}
                 <div class="relative mb-6" data-te-input-wrapper-init>
                   <input
                     type="password"
-                    className={`peer p-3 border ${
-                      isValidPassword ? "border-gray-300" : "border-red-600"
-                    } text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block min-h-full w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0 focus:border-orange-400`}
+                    className={`p-3 border ${
+                      isValidEmail ? "border-gray-300" : "border-red-500"
+                    } text-neutral-500 sm:text-sm rounded-lg focus:ring-primary-600 focus:text-orange-600 focus:border-primary-600 block min-h-full w-full bg-transparent outline-none transition-all duration-200 ease-linear focus:border-orange-600`}
                     id="exampleFormControlInput22"
                     onChange={formDataChangeHandler}
                     name="password"
+                    placeholder="Password"
                   />
 
-                  <label
+                  {/* <label
                     for="exampleFormControlInput22"
                     class="pointer-events-none absolute left-3 top-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:text-orange-500 peer-focus:bg-white peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none"
                   >
                     Password
-                  </label>
+                  </label> */}
                 </div>
                 {/* New Account ----------------------*/}
                 <div>
