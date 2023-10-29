@@ -212,7 +212,10 @@ const Navbar = () => {
         >
           <ul className="px-3 py-4">
             <li className="flex flex-col gap-2">
-              <Link className="text-xs text-gray-600" href="/dashboard">
+              <Link
+                className="text-xs text-gray-600"
+                href="https://evertize.vercel.app/dashboard"
+              >
                 Dashboard
               </Link>
               <Link className="text-xs text-gray-600" href="/">
