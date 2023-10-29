@@ -174,3 +174,11 @@ input[type="number"]::-webkit-outer-spin-button {
 .enquiryCard:hover .enquiry_eye {
   visibility: visible;
 }
+
+
+.gShadow{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.IShadow{
+  box-shadow:inset 0 0 5px rgba(0, 0, 0, 0.2);
+}

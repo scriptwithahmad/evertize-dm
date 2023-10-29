@@ -5,6 +5,14 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* swiper js */}
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        {/* FAV ICON */}
         <link rel="icon" href="/elogo.png" />
         <link
           rel="stylesheet"

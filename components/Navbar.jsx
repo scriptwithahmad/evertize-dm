@@ -35,7 +35,7 @@ const NavLinks = [
   {
     name: "Contact",
     link: "/contact",
-  }
+  },
 ];
 const ContectLinks = [
   {
@@ -103,9 +103,15 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
+  const [showModel, setShowModel] = useState(false);
+
+  const handleModel = () => {
+    setShowModel(!showModel);
+  };
+
   return (
     <div>
-      <nav className={`navbar ${isOpen ? "open" : ""}`}>
+      <nav className={`navbar relative ${isOpen ? "open" : ""}`}>
         <div className="nav-left">
           <div className="logo">
             <img src="/logo.png" alt="" />
@@ -165,16 +171,17 @@ const Navbar = () => {
         </div>
 
         <div className={`slider ${isOpen ? "open" : ""}`} />
-
+        {/* Profile start  */}
         <div className="flex items-center gap-2">
           {user ? (
             <div className="flex items-center gap-2 leading-4">
               <Image
                 height={60}
                 width={60}
-                className="w-12 h-12 object-cover rounded-full"
+                className="w-12 h-12 object-cover rounded-full cursor-pointer"
                 src={user.image}
                 alt="img here"
+                onClick={handleModel}
               ></Image>
               <div className="text-white capitalize">
                 <h3> {user?.name} </h3>
@@ -193,6 +200,26 @@ const Navbar = () => {
               </Link>
             </div>
           )}
+        </div>
+        {/* PROFILE MODEL ============================*/}
+        <div
+          style={{
+            visibility: showModel ? "visible" : "hidden",
+            opacity: showModel ? "1" : "0",
+            transition: ".5s",
+          }}
+          className="IShadow w-fit absolute right-[5%] top-[90%] bg-white overflow-hidden rounded-md bottom-14 h-fit"
+        >
+          <ul className="px-3 py-4">
+            <li className="flex flex-col gap-2">
+              <Link className="text-xs text-gray-600" href="http://localhost:3000/dashboard">
+                Dashboard
+              </Link>
+              <Link className="text-xs text-gray-600" href="/">
+                Logout
+              </Link>
+            </li>
+          </ul>
         </div>
       </nav>
     </div>
