@@ -11,7 +11,7 @@ const Hero = () => {
             <span className="font-extrabold text-[#FA7909]"> EVERTIZE </span>
             Your Strategic Partner in Marketing Success
           </h1>
-          <p className="mb-4 leading-[1.4] text-gray-900 text-sm w-full lg:max-w-[60%]">
+          <p className="mb-4 leading-[1.4] text-gray-900 text-sm w-full lg:max-w-[80%]">
             We specialize in delivering comprehensive Marketing and Branding
             Solutions tailored to your needs.
           </p>

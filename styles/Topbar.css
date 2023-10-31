@@ -2,14 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Roboto", sans-serif;
   background-image: url("https://www.custominsight.com/images/team-assessment/team-banner.webp");
-  background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  padding: 150px;
+  height: 400px;
   justify-content: center;
   position: relative;
+  background-attachment: fixed;
 }
 .breadCrumbOverlay::after {
   position: absolute;

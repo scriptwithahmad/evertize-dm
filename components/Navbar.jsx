@@ -208,13 +208,13 @@ const Navbar = () => {
             opacity: showModel ? "1" : "0",
             transition: ".5s",
           }}
-          className="IShadow w-fit absolute right-[5%] top-[90%] bg-white overflow-hidden rounded-md bottom-14 h-fit"
+          className="IShadow w-fit absolute right-[6%] top-[98%] bg-white overflow-hidden rounded-md bottom-14 h-fit"
         >
           <ul className="px-3 py-4">
             <li className="flex flex-col gap-2">
               <Link
                 className="text-xs text-gray-600"
-                href="https://evertize.vercel.app/dashboard"
+                href="/dashboard"
               >
                 Dashboard
               </Link>

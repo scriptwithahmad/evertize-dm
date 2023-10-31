@@ -81,7 +81,7 @@ const Team = () => {
     <div>
       <div>
         <Toaster />
-        <div className="main">
+        <div className="main mt-14">
           <form className="formMain teamMain" onSubmit={sumbitHandler}>
             <span className="font-semibold text-2xl text-white pb-3 mb-4 border-b border-gray-600">
               Add New Service
