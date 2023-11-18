@@ -78,7 +78,7 @@ const Team = ({ data }) => {
 export default Team;
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/team/get-all-team");
+  const res = await fetch("https://evertizemarketing.com/api/team/get-all-team");
   const data = await res.json();
 
   return { props: { data } };

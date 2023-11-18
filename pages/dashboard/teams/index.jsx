@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Team = ({ data }) => {
   const router = useRouter();
-  console.log(data.teamData)
+  console.log(data.teamData);
 
   const delTeamMember = async (id) => {
     try {
@@ -19,7 +19,7 @@ const Team = ({ data }) => {
             position: "top-center",
           })
         ) {
-          console.log("Team Member Deleted Successfully!")
+          console.log("Team Member Deleted Successfully!");
         } else {
           toast.error("Something went Wrong");
         }
@@ -161,7 +161,10 @@ const Team = ({ data }) => {
                       </div>
                     </td>
                     <td class="px-6">
-                      <Link href="/dashboard/teams" class="font-medium text-[#E77918]">
+                      <Link
+                        href="/dashboard/teams"
+                        class="font-medium text-[#E77918]"
+                      >
                         <i
                           onClick={() => delTeamMember(v._id)}
                           class="fa-regular fa-trash-can mr-2"
@@ -185,7 +188,7 @@ const Team = ({ data }) => {
 export default Team;
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/team/get-all-team");
+  const res = await fetch("https://evertizemarketing.com/api/team/get-all-team");
   const data = await res.json();
 
   return { props: { data } };

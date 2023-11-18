@@ -121,8 +121,7 @@ const Users = ({ data }) => {
 export default Users;
 
 export async function getServerSideProps() {
-  // const res = await fetch("http://localhost:3000/api/register");
-  const res = await fetch("https://evertize.vercel.app/api/register");
+  const res = await fetch("https://evertizemarketing.com/api/register");
   const data = await res.json();
 
   return { props: { data } };

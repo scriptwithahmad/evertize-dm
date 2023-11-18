@@ -17,9 +17,8 @@ const Team = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  //   CLOUDINARY
+  //   CLOUDINARY CODE START
   const [tempImage, setTempImage] = useState("");
-
   const uploadImageToCloudinary = async () => {
     try {
       const data = new FormData();
@@ -41,8 +40,8 @@ const Team = () => {
       alert("Something wrong! while Uplading image");
     }
   };
+  //   CLOUDINARY ENDS
 
-  //   CLOUDINARY
   // SUBMIT FORM ON SUBMIT
   const sumbitHandler = async (e) => {
     e.preventDefault();
@@ -53,18 +52,18 @@ const Team = () => {
         ...formData,
         avatar: imageUrl,
       });
-      toast.success("Team Member Added Successfully!", {
-        duration: 2000,
-        position: "top-center",
-      });
+      setTimeout(() => {
+        toast.success("Team Member Added Successfully!", {
+          duration: 2000,
+          position: "top-center",
+        });
+      }, 1000);
       setFormData({
         name: "",
         design: "",
         email: "",
       });
-      setTimeout(() => {
-        router.push("/team");
-      }, 2000);
+      router.push("/team");
       setTempImage("");
     } catch (error) {
       if (error?.response?.data?.message) {

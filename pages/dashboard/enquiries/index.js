@@ -22,10 +22,7 @@ const Enquiries = ({ data }) => {
               <input
                 type="text"
                 className="input"
-                // value={query}
-                // onKeyDown={OnKeyEnter}
                 placeholder="Search..."
-                // onChange={handleInputChange}
               />
               <button>Search</button>
             </div>
@@ -57,7 +54,10 @@ const Enquiries = ({ data }) => {
                       />
                     </div>
                     <div className="das-info cursor-pointer">
-                      <h1 onClick={() => showModelData(v)} className="title"> {v.serviceName} </h1>
+                      <h1 onClick={() => showModelData(v)} className="title">
+                        {" "}
+                        {v.serviceName}{" "}
+                      </h1>
                       <p
                         style={{ display: "inline-block" }}
                         className="text-[#eeeeee9a] text-[13px] leading-tight"
@@ -105,7 +105,9 @@ const Enquiries = ({ data }) => {
               );
             })}
           </div>
-          {showModel && <Model modelData={modelData} setShowModel={setShowModel} />}
+          {showModel && (
+            <Model modelData={modelData} setShowModel={setShowModel} />
+          )}
         </div>
       </div>
     </>
@@ -116,7 +118,7 @@ export default Enquiries;
 
 export async function getServerSideProps() {
   const res = await fetch(
-    "https://evertize.vercel.app/api/addclientservice/getall"
+    "https://evertizemarketing.com/api/addclientservice/getall"
   );
   const data = await res.json();
 
