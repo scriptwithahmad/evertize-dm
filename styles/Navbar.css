@@ -126,7 +126,7 @@
     transition: 0.9s all ease-in-out;
     z-index: 9999999999999999;
   }
-  .nav-links:hover{
+  .nav-links:hover {
     color: #fa7909;
   }
 
@@ -137,19 +137,19 @@
     padding: 40px 20px;
     line-height: 2;
   }
-  
+
   .menu-icon {
     display: flex;
   }
-  
+
   .menu-icon .bar {
     display: block;
   }
-  
+
   .menu-icon .apllyBtn {
     display: none;
   }
-  
+
   .mobileResBtn {
     margin: 4px 14px;
     width: max-content;

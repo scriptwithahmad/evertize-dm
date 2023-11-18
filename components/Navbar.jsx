@@ -71,15 +71,10 @@ const ContectLinks = [
     name: "Register",
     link: "/register",
   },
-  {
-    name: "Login",
-    link: "/login",
-  },
 ];
 
 const Navbar = () => {
   const { user, logout } = useUser();
-  // console.log(user)
   const Router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -102,12 +97,6 @@ const Navbar = () => {
       window.document.body.style.overflow = "visible";
     }
   }, [isOpen]);
-
-  const [showModel, setShowModel] = useState(false);
-
-  const handleModel = () => {
-    setShowModel(!showModel);
-  };
 
   return (
     <div>
@@ -170,27 +159,50 @@ const Navbar = () => {
           <div className={`bar ${isOpen ? "open" : ""}`} />
         </div>
 
-        <div className={`slider ${isOpen ? "open" : ""}`} />
         {/* Profile start  */}
-        <div className="flex items-center gap-2">
+        <div className={`flex items-center gap-2`}>
           {user ? (
-            <div className="flex items-center gap-2 leading-4">
-              <Image
-                height={60}
-                width={60}
-                className="w-12 h-12 object-cover rounded-full cursor-pointer"
-                src={user.image}
-                alt="img here"
-                onClick={handleModel}
-              ></Image>
-              <div className="text-white capitalize">
-                <h3> {user?.name} </h3>
-                <span
-                  className="text-xs hover:text-[#E77918] transition-all cursor-pointer"
-                  onClick={handleLogout}
-                >
-                  Logout
-                </span>
+            <div className="group">
+              <div className="flex relative items-center gap-2">
+                <Image
+                  height={50}
+                  width={50}
+                  className="w-10 h-10 object-cover rounded-full cursor-pointer"
+                  src={user.image}
+                  alt="img here"
+                ></Image>
+                <div className="leading-3">
+                  <p className="text-sm text-white capitalize font-medium">
+                    {user?.name}
+                  </p>
+                  <span
+                    onClick={handleLogout}
+                    className="text-[11px] cursor-pointer text-red-500 hover:text-red-600"
+                  >
+                    Logout
+                  </span>
+                </div>
+              </div>
+              {/* Hover Model  ---------------*/}
+              <div
+                className={`absolute right-[6%] opacity-0 group-hover:opacity-100  group-hover:top-[100%] top-[120%] bg-gray-300 z-[1000000] rounded-lg transition-all duration-500`}
+              >
+                <ul className="px-4 py-4">
+                  <li className="flex flex-col gap-2">
+                    <Link
+                      className="text-xs text-[#252525] font-medium hover:text-blue-600"
+                      href="https://evertizemarketing.com/dashboard"
+                    >
+                      Dashboard
+                    </Link>
+                    <span
+                      className="text-xs cursor-pointer text-[#252525] font-normal hover:text-red-600"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </span>
+                  </li>
+                </ul>
               </div>
             </div>
           ) : (
@@ -200,29 +212,6 @@ const Navbar = () => {
               </Link>
             </div>
           )}
-        </div>
-        {/* PROFILE MODEL ============================*/}
-        <div
-          style={{
-            visibility: showModel ? "visible" : "hidden",
-            opacity: showModel ? "1" : "0",
-            transition: ".5s",
-          }}
-          className="IShadow w-fit absolute right-[6%] top-[98%] bg-white overflow-hidden rounded-md bottom-14 h-fit"
-        >
-          <ul className="px-3 py-4">
-            <li className="flex flex-col gap-2">
-              <Link
-                className="text-xs text-gray-600"
-                href="/dashboard"
-              >
-                Dashboard
-              </Link>
-              <Link className="text-xs text-gray-600" href="/">
-                Logout
-              </Link>
-            </li>
-          </ul>
         </div>
       </nav>
     </div>

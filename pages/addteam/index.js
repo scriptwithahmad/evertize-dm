@@ -44,14 +44,12 @@ const Team = () => {
 
   //   CLOUDINARY
   // SUBMIT FORM ON SUBMIT
-
   const sumbitHandler = async (e) => {
     e.preventDefault();
     try {
       setLoading(true);
       const imageUrl = await uploadImageToCloudinary();
       const res = await axios.post("/api/team", {
-        // Notice the leading '/'
         ...formData,
         avatar: imageUrl,
       });
@@ -62,10 +60,11 @@ const Team = () => {
       setFormData({
         name: "",
         design: "",
+        email: "",
       });
       setTimeout(() => {
         router.push("/team");
-      }, 1000);
+      }, 2000);
       setTempImage("");
     } catch (error) {
       if (error?.response?.data?.message) {

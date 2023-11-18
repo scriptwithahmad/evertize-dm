@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 const JoditEditor = dynamic(() => import("jodit-react"), { ssr: false });
 
 const updateService = ({ data }) => {
+  console.log(data);
   const cateData = data.getcat;
   const editor = useRef(null);
   const router = useRouter();
@@ -86,8 +87,10 @@ const updateService = ({ data }) => {
         <form
           className="flex flex-col gap-5 rounded-lg max-w-[600px] m-auto p-6 bg-[#262F3D]"
           onSubmit={sumbitHandler}
-          >
-          <span className="font-semibold text-2xl text-white pb-3 border-b border-gray-600">Add New Service</span>
+        >
+          <span className="font-semibold text-2xl text-white pb-3 border-b border-gray-600">
+            Add New Service
+          </span>
           <div className="grid gap-2">
             {/* Title ---------*/}
             {/* <div className="flex flex-col gap-2"> */}
@@ -212,7 +215,7 @@ const updateService = ({ data }) => {
 export default updateService;
 
 export async function getServerSideProps() {
-  const res = await fetch("https://evertize.vercel.app/api/newcategory");
+  const res = await fetch("http://localhost:3000/api/newcategory");
   const data = await res.json();
 
   return { props: { data } };

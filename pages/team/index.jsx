@@ -44,16 +44,17 @@ const Team = ({ data }) => {
       <TopBanner Route="Team" />
       <div className="py-10">
         <div className="max-w-[1100px] m-auto mb-8 text-center">
-          <p className="text-base leading-7 text-orange-600">
-            Team
-          </p>
+          <p className="text-base leading-7 text-orange-600">Team</p>
           <h2 className="mt-2 text-4xl  font-extrabold tracking-tight text-[#131A29]">
             Meet Our Team
           </h2>
           <div className="grid grid-cols-1 px-4 sm:grid-cols-2 lg:grid-cols-3 gap-7 mt-8">
             {data?.teamData.map((v, i) => {
               return (
-                <div key={i} className="border-[1px] shadow-lg border-[orange-300] rounded-lg relative overflow-hidden h-[400px] w-[100%] group">
+                <div
+                  key={i}
+                  className="border-[1px] shadow-lg border-[orange-300] rounded-lg relative overflow-hidden h-[400px] w-[100%] group"
+                >
                   <img
                     className="rounded-lg h-[100%] w-[100%] object-cover transition-transform transform group-hover:scale-105"
                     src={v.avatar}
@@ -77,9 +78,8 @@ const Team = ({ data }) => {
 export default Team;
 
 export async function getServerSideProps() {
-  const res = await fetch("https://evertize.vercel.app/api/team/get-all-team");
+  const res = await fetch("http://localhost:3000/api/team/get-all-team");
   const data = await res.json();
 
   return { props: { data } };
 }
-

@@ -156,7 +156,7 @@ export default function Services({ data }) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("https://evertize.vercel.app/api/addservice");
+  const res = await fetch("http://localhost:3000/api/addservice");
   const data = await res.json();
 
   return { props: { data } };

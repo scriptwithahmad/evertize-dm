@@ -5,7 +5,7 @@ import Ceo from "@/components/Ceo";
 import Features from "@/components/Features";
 
 const index = ({ data }) => {
-  // console.log(data.message);
+  // console.log(data)
 
   function createMarkup(c) {
     return { __html: c };
@@ -58,7 +58,7 @@ const index = ({ data }) => {
 export default index;
 
 export async function getServerSideProps() {
-  const res = await fetch("https://evertize.vercel.app//api/addservice");
+  const res = await fetch("http://localhost:3000/api/addservice");
   const data = await res.json();
 
   return { props: { data } };

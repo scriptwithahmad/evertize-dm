@@ -142,7 +142,7 @@ const Team = ({ data }) => {
                       class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap"
                     >
                       <img
-                        className="w-12 h-12 rounded-full"
+                        className="w-12 h-12 rounded-full object-cover"
                         src={v.avatar}
                         alt=""
                       />
@@ -185,7 +185,7 @@ const Team = ({ data }) => {
 export default Team;
 
 export async function getServerSideProps() {
-  const res = await fetch("https://evertize.vercel.app/api/team/get-all-team");
+  const res = await fetch("http://localhost:3000/api/team/get-all-team");
   const data = await res.json();
 
   return { props: { data } };
