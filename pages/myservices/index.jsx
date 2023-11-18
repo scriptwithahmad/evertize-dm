@@ -58,7 +58,7 @@ const index = ({ data }) => {
 export default index;
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:3000/api/addservice");
+  const res = await fetch("https://evertizemarketing.com//api/addservice");
   const data = await res.json();
 
   return { props: { data } };

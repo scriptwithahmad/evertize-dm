@@ -111,10 +111,9 @@ const Navbar = () => {
               ? NavLinks?.map((v, i) => (
                   <li key={i}>
                     <Link
-                      className={Router.pathname === v.link ? "active" : ""}
+                      className={`Router.pathname === v.link ? "active" : "" `}
                       style={{
-                        color:
-                          Router.pathname === v.link ? "#FA7909" : "#dadada",
+                        color: Router.pathname === v.link ? "#FA7909" : "#888",
                       }}
                       href={v.link}
                     >
@@ -127,8 +126,7 @@ const Navbar = () => {
                     <Link
                       className={Router.pathname === v.link ? "active" : ""}
                       style={{
-                        color:
-                          Router.pathname === v.link ? "#FA7909" : "#dadada",
+                        color: Router.pathname === v.link ? "#FA7909" : "#888",
                       }}
                       href={v.link}
                     >
@@ -138,8 +136,8 @@ const Navbar = () => {
                 ))}
 
             <li>
-              <Link href="/register" className="apllyBtnMobileRes">
-                Contact us
+              <Link href="/login" className="apllyBtnMobileRes">
+                Login
               </Link>
             </li>
           </ul>
@@ -185,21 +183,21 @@ const Navbar = () => {
               </div>
               {/* Hover Model  ---------------*/}
               <div
-                className={`absolute right-[6%] opacity-0 group-hover:opacity-100  group-hover:top-[100%] top-[120%] bg-gray-300 z-[1000000] rounded-lg transition-all duration-500`}
+                className={`absolute right-[5%] opacity-0 group-hover:opacity-100  group-hover:top-[100%] top-[120%] gShadow bg-gray-200 z-[1000000] rounded-lg transition-all duration-500`}
               >
                 <ul className="px-4 py-4">
-                  <li className="flex flex-col gap-2">
+                  <li className="flex flex-col gap-3">
                     <Link
-                      className="text-xs text-[#252525] font-medium hover:text-blue-600"
+                      className="text-sm text-[#252525] font-medium hover:text-blue-600"
                       href="https://evertizemarketing.com/dashboard"
                     >
-                      Dashboard
+                    <i className="fa-solid fa-chart-simple mr-1"></i>  Dashboard
                     </Link>
                     <span
-                      className="text-xs cursor-pointer text-[#252525] font-normal hover:text-red-600"
+                      className="text-sm cursor-pointer text-[#252525] font-normal hover:text-red-600"
                       onClick={handleLogout}
                     >
-                      Logout
+                    <i className="fa-solid fa-right-from-bracket mr-1"></i>  Logout
                     </span>
                   </li>
                 </ul>
@@ -207,8 +205,8 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="applyBtn">
-              <Link href="/register" className="apllyBtn">
-                Contact us
+              <Link href="/login" className="apllyBtn">
+                login
               </Link>
             </div>
           )}

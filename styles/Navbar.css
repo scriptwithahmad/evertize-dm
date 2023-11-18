@@ -28,18 +28,6 @@
   left: 5%;
 }
 
-.nav-links li {
-  cursor: pointer;
-}
-
-.nav-links li a {
-  color: #666;
-  text-decoration: none;
-  transition: 0.3s all ease-in-out;
-}
-.nav-links li a:hover {
-  color: #e77918;
-}
 
 .nav-links .mobileResBtn {
   display: none;
